@@ -18,7 +18,6 @@ final class USBDeviceDetector : NSObject {
     private var notificationPortIterators: [(IOIterator, selector: Selector)]
 
     private let matchesUSBDevice = IOServiceMatching(kIOUSBDeviceClassName)
-    private var addedIterator: io_iterator_t = 0
     
     override init() {
         
