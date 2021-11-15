@@ -10,21 +10,32 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    var usbDeviceDetector = USBDeviceDetector()
     
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+
+        usbDeviceDetector.delegate = self
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+
+        usbDeviceDetector.delegate = nil
     }
 
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
         return true
     }
-
-
 }
 
+extension AppDelegate : USBDeviceDetectorDelegate {
+    
+    func usbDeviceDetector(_ detector: USBDeviceDetector, devicesDidAdd devices: [USBDevice]) {
+     
+        print("Added", devices.map(\.name))
+    }
+    
+    func usbDeviceDetector(_ detector: USBDeviceDetector, devicesDidRemove devices: [USBDevice]) {
+        
+        print("Removed", devices.map(\.name))
+    }
+}

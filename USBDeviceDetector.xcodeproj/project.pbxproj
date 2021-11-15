@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B18CF3E827427F2D0056BC3D /* IOIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF3E727427F2D0056BC3D /* IOIterator.swift */; };
 		B1DD985A2740D65B00D36719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD98592740D65B00D36719 /* AppDelegate.swift */; };
 		B1DD985C2740D65B00D36719 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD985B2740D65B00D36719 /* ViewController.swift */; };
 		B1DD985E2740D65D00D36719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1DD985D2740D65D00D36719 /* Assets.xcassets */; };
@@ -14,6 +15,12 @@
 		B1DD986C2740D65D00D36719 /* USBDeviceDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD986B2740D65D00D36719 /* USBDeviceDetectorTests.swift */; };
 		B1DD98762740D65D00D36719 /* USBDeviceDetectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD98752740D65D00D36719 /* USBDeviceDetectorUITests.swift */; };
 		B1DD98782740D65D00D36719 /* USBDeviceDetectorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD98772740D65D00D36719 /* USBDeviceDetectorUITestsLaunchTests.swift */; };
+		B1DD98852740D67900D36719 /* USBDeviceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD98842740D67800D36719 /* USBDeviceDetector.swift */; };
+		B1DD98872740E4DF00D36719 /* USBDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD98862740E4DF00D36719 /* USBDevice.swift */; };
+		B1DD988E2740EEDD00D36719 /* USBDeviceSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD988D2740EEDD00D36719 /* USBDeviceSequence.swift */; };
+		B1DD98902740EFB000D36719 /* IOObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD988F2740EFB000D36719 /* IOObject.swift */; };
+		B1DD98922740F81900D36719 /* USBDeviceDetectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD98912740F81900D36719 /* USBDeviceDetectorDelegate.swift */; };
+		B1DD989427410E5000D36719 /* USBDeviceDetectorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD989327410E5000D36719 /* USBDeviceDetectorError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B18CF3E727427F2D0056BC3D /* IOIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOIterator.swift; sourceTree = "<group>"; };
 		B1DD98562740D65B00D36719 /* USBDeviceDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = USBDeviceDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1DD98592740D65B00D36719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1DD985B2740D65B00D36719 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +53,12 @@
 		B1DD98712740D65D00D36719 /* USBDeviceDetectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = USBDeviceDetectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1DD98752740D65D00D36719 /* USBDeviceDetectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDeviceDetectorUITests.swift; sourceTree = "<group>"; };
 		B1DD98772740D65D00D36719 /* USBDeviceDetectorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDeviceDetectorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B1DD98842740D67800D36719 /* USBDeviceDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDeviceDetector.swift; sourceTree = "<group>"; };
+		B1DD98862740E4DF00D36719 /* USBDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDevice.swift; sourceTree = "<group>"; };
+		B1DD988D2740EEDD00D36719 /* USBDeviceSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDeviceSequence.swift; sourceTree = "<group>"; };
+		B1DD988F2740EFB000D36719 /* IOObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOObject.swift; sourceTree = "<group>"; };
+		B1DD98912740F81900D36719 /* USBDeviceDetectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDeviceDetectorDelegate.swift; sourceTree = "<group>"; };
+		B1DD989327410E5000D36719 /* USBDeviceDetectorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDeviceDetectorError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +110,13 @@
 			isa = PBXGroup;
 			children = (
 				B1DD98592740D65B00D36719 /* AppDelegate.swift */,
+				B1DD98842740D67800D36719 /* USBDeviceDetector.swift */,
+				B1DD989327410E5000D36719 /* USBDeviceDetectorError.swift */,
+				B1DD98912740F81900D36719 /* USBDeviceDetectorDelegate.swift */,
+				B1DD98862740E4DF00D36719 /* USBDevice.swift */,
+				B1DD988D2740EEDD00D36719 /* USBDeviceSequence.swift */,
+				B1DD988F2740EFB000D36719 /* IOObject.swift */,
+				B18CF3E727427F2D0056BC3D /* IOIterator.swift */,
 				B1DD985B2740D65B00D36719 /* ViewController.swift */,
 				B1DD985D2740D65D00D36719 /* Assets.xcassets */,
 				B1DD985F2740D65D00D36719 /* Main.storyboard */,
@@ -251,8 +272,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1DD98922740F81900D36719 /* USBDeviceDetectorDelegate.swift in Sources */,
+				B1DD98902740EFB000D36719 /* IOObject.swift in Sources */,
+				B1DD988E2740EEDD00D36719 /* USBDeviceSequence.swift in Sources */,
+				B1DD989427410E5000D36719 /* USBDeviceDetectorError.swift in Sources */,
+				B1DD98872740E4DF00D36719 /* USBDevice.swift in Sources */,
 				B1DD985C2740D65B00D36719 /* ViewController.swift in Sources */,
+				B1DD98852740D67900D36719 /* USBDeviceDetector.swift in Sources */,
 				B1DD985A2740D65B00D36719 /* AppDelegate.swift in Sources */,
+				B18CF3E827427F2D0056BC3D /* IOIterator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
