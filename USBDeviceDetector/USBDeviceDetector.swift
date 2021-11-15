@@ -48,7 +48,6 @@ final class USBDeviceDetector : NSObject {
     deinit {
         
         CFRunLoopRemoveSource(CFRunLoopGetCurrent(), notificationPortRunLoop, .defaultMode)
-        
         IONotificationPortDestroy(notificationPort)
     }
 }
