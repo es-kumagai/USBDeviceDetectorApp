@@ -26,7 +26,7 @@ final class USBDevice : NSObject {
             name.deallocate()
         }
         
-        guard IORegistryEntryGetName(object.rawObject, buffer) == KERN_SUCCESS else {
+        guard case KERN_SUCCESS = IORegistryEntryGetName(object.rawObject, buffer) else {
             
             fatalError("Has no name.")
         }

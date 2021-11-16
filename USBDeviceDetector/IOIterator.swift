@@ -75,7 +75,7 @@ extension IOIterator : IteratorProtocol {
             return nil
         }
         
-        guard let object = IOObject(retainedObject: IOIteratorNext(rawIterator!.pointee)) else {
+        guard case let iterator = IOIteratorNext(rawIterator!.pointee), let object = IOObject(retainedObject: iterator) else {
             
             return nil
         }

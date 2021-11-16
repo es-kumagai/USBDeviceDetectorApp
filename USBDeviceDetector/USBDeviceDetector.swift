@@ -92,7 +92,7 @@ private extension USBDeviceDetector {
             callback.invoke(iterator)
         }
                 
-        guard IOServiceAddMatchingNotification(notificationPort, iterator.type, matchesUSBDevice, rawCallback, handler.toOpaque(), iterator.rawIterator) == KERN_SUCCESS else {
+        guard case KERN_SUCCESS = IOServiceAddMatchingNotification(notificationPort, iterator.type, matchesUSBDevice, rawCallback, handler.toOpaque(), iterator.rawIterator) else {
             
             throw USBDeviceDetector.InstantiationError.failedToAddMatchingNotification(iterator)
         }
