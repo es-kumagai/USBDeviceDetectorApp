@@ -18,6 +18,7 @@ public final class USBDeviceDetector : NSObject {
     private var notificationPortIterators: [(IOIterator, selector: Selector)]
 
     private let matchesUSBDevice = IOServiceMatching(kIOUSBDeviceClassName)
+    private var notificationHandlers = [NotificationHandler]()
     
     public override init() {
         
@@ -48,6 +49,8 @@ public final class USBDeviceDetector : NSObject {
         
         CFRunLoopRemoveSource(CFRunLoopGetCurrent(), notificationPortRunLoop, .defaultMode)
         IONotificationPortDestroy(notificationPort)
+        
+        notificationHandlers = []
     }
 }
 
@@ -71,12 +74,12 @@ private class NotificationHandler {
     
     func toOpaque() -> UnsafeMutableRawPointer {
         
-        Unmanaged.passRetained(self).toOpaque()
+        Unmanaged.passUnretained(self).toOpaque()
     }
     
     static func from(_ pointer: UnsafeRawPointer) -> NotificationHandler {
         
-        Unmanaged.fromOpaque(pointer).takeRetainedValue()
+        Unmanaged.fromOpaque(pointer).takeUnretainedValue()
     }
 }
 
@@ -91,7 +94,9 @@ private extension USBDeviceDetector {
             
             callback.invoke(iterator)
         }
-                
+        
+        notificationHandlers.append(handler)
+        
         guard case KERN_SUCCESS = IOServiceAddMatchingNotification(notificationPort, iterator.type, matchesUSBDevice, rawCallback, handler.toOpaque(), iterator.rawIterator) else {
             
             throw USBDeviceDetector.InstantiationError.failedToAddMatchingNotification(iterator)
