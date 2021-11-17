@@ -9,7 +9,7 @@ import IOKit
 
 extension USBDeviceDetector {
     
-    enum InstantiationError : Error {
+    public enum InstantiationError : Error {
         
         case failedToAddMatchingNotification(IOIterator)
     }

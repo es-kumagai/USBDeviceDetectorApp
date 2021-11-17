@@ -8,16 +8,16 @@
 import Foundation
 import IOKit
 
-final class USBDevice : NSObject {
+public final class USBDevice : NSObject {
     
-    private(set) var object: IOObject
+    public let object: IOObject
     
     init(object: IOObject) {
         
         self.object = object
     }
     
-    var name: String {
+    public var name: String {
         
         let name = UnsafeMutablePointer<io_name_t>.allocate(capacity: 1)
         let buffer = UnsafeMutablePointer<CChar>(OpaquePointer(name))

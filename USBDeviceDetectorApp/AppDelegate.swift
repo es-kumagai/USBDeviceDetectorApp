@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import USBDeviceDetector
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {

@@ -7,9 +7,9 @@
 
 import IOKit
 
-final class IOObject {
+public final class IOObject {
     
-    private(set) var rawObject: io_object_t
+    public private(set) var rawObject: io_object_t
     
     convenience init?(_ object: io_object_t) {
         
@@ -33,12 +33,12 @@ final class IOObject {
         invalidate()
     }
     
-    var isValid: Bool {
+    public var isValid: Bool {
     
         rawObject != IO_OBJECT_NULL
     }
     
-    func invalidate() {
+    public func invalidate() {
         
         guard isValid else {
             

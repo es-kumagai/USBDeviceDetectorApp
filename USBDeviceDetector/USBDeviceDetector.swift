@@ -9,9 +9,9 @@ import Foundation
 import IOKit
 import IOKit.usb
 
-final class USBDeviceDetector : NSObject {
+public final class USBDeviceDetector : NSObject {
     
-    weak var delegate: USBDeviceDetectorDelegate?
+    public weak var delegate: USBDeviceDetectorDelegate?
     
     private var notificationPort: IONotificationPortRef
     private var notificationPortRunLoop: CFRunLoopSource
@@ -19,7 +19,7 @@ final class USBDeviceDetector : NSObject {
 
     private let matchesUSBDevice = IOServiceMatching(kIOUSBDeviceClassName)
     
-    override init() {
+    public override init() {
         
         notificationPort = IONotificationPortCreate(kIOMainPortDefault)
         notificationPortRunLoop = IONotificationPortGetRunLoopSource(notificationPort).takeRetainedValue()

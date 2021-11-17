@@ -7,7 +7,7 @@
 
 import Foundation
 
-@objc protocol USBDeviceDetectorDelegate : NSObjectProtocol {
+@objc public protocol USBDeviceDetectorDelegate : NSObjectProtocol {
 
     @objc optional func usbDeviceDetector(_ detector: USBDeviceDetector, currentDevicesDetected devices: [USBDevice])
     

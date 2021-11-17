@@ -7,10 +7,10 @@
 
 import IOKit
 
-final class IOIterator {
+public final class IOIterator {
     
-    var type: String
-    var rawIterator: UnsafeMutablePointer<io_iterator_t>?
+    public let type: String
+    public private(set) var rawIterator: UnsafeMutablePointer<io_iterator_t>?
     
     init(type: String, retainedIterator iterator: io_iterator_t) {
         
@@ -36,7 +36,7 @@ final class IOIterator {
         invalidate()
     }
     
-    var isValid: Bool {
+    public var isValid: Bool {
         
         guard let iterator = rawIterator else {
         
@@ -46,7 +46,7 @@ final class IOIterator {
         return IOIteratorIsValid(iterator.pointee) != 0
     }
     
-    func invalidate() {
+    public func invalidate() {
         
         guard isValid else {
         
@@ -68,7 +68,7 @@ final class IOIterator {
 
 extension IOIterator : IteratorProtocol {
     
-    func next() -> IOObject? {
+    public func next() -> IOObject? {
 
         guard isValid else {
             

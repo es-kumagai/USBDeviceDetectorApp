@@ -7,16 +7,16 @@
 
 import IOKit
 
-struct USBDeviceSequence : Sequence {
+public struct USBDeviceSequence : Sequence {
     
-    private(set) var rawIterator: IOIterator
+    private let rawIterator: IOIterator
     
     init(rawIterator: IOIterator) {
         
         self.rawIterator = rawIterator
     }
     
-    func makeIterator() -> AnyIterator<USBDevice> {
+    public func makeIterator() -> AnyIterator<USBDevice> {
         
         AnyIterator {
             
@@ -24,7 +24,7 @@ struct USBDeviceSequence : Sequence {
         }
     }
     
-    var devices: [USBDevice] {
+    public var devices: [USBDevice] {
         
         Array(self)
     }
