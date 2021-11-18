@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B163F9042744E85C002E8B99 /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F9032744E85C002E8B99 /* AudioDevice.swift */; };
+		B163F9062744E9D2002E8B99 /* AudioDeviceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F9052744E9D2002E8B99 /* AudioDeviceError.swift */; };
+		B163F9082744EB55002E8B99 /* AudioObjectProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F9072744EB55002E8B99 /* AudioObjectProperty.swift */; };
+		B163F90B2745445E002E8B99 /* AudioObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F90A2745445E002E8B99 /* AudioObjectController.swift */; };
+		B163F90D2745491D002E8B99 /* AudioObjectPropertyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F90C2745491D002E8B99 /* AudioObjectPropertyValue.swift */; };
+		B163F91027460A6D002E8B99 /* AudioProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F90F27460A6D002E8B99 /* AudioProperty.swift */; };
+		B163F91227460A93002E8B99 /* AudioHardwareProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F91127460A93002E8B99 /* AudioHardwareProperty.swift */; };
+		B163F91427460B47002E8B99 /* AudioDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F91327460B47002E8B99 /* AudioDeviceProperty.swift */; };
 		B1BA3F362743E222007FD967 /* USBDeviceDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = B1BA3F352743E222007FD967 /* USBDeviceDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1BA3F392743E222007FD967 /* USBDeviceDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BA3F332743E222007FD967 /* USBDeviceDetector.framework */; };
 		B1BA3F3A2743E222007FD967 /* USBDeviceDetector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1BA3F332743E222007FD967 /* USBDeviceDetector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -48,6 +56,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B163F9032744E85C002E8B99 /* AudioDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
+		B163F9052744E9D2002E8B99 /* AudioDeviceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeviceError.swift; sourceTree = "<group>"; };
+		B163F9072744EB55002E8B99 /* AudioObjectProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioObjectProperty.swift; sourceTree = "<group>"; };
+		B163F90A2745445E002E8B99 /* AudioObjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioObjectController.swift; sourceTree = "<group>"; };
+		B163F90C2745491D002E8B99 /* AudioObjectPropertyValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioObjectPropertyValue.swift; sourceTree = "<group>"; };
+		B163F90F27460A6D002E8B99 /* AudioProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioProperty.swift; sourceTree = "<group>"; };
+		B163F91127460A93002E8B99 /* AudioHardwareProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHardwareProperty.swift; sourceTree = "<group>"; };
+		B163F91327460B47002E8B99 /* AudioDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeviceProperty.swift; sourceTree = "<group>"; };
 		B18CF3E727427F2D0056BC3D /* IOIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOIterator.swift; sourceTree = "<group>"; };
 		B1BA3F332743E222007FD967 /* USBDeviceDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = USBDeviceDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1BA3F352743E222007FD967 /* USBDeviceDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USBDeviceDetector.h; sourceTree = "<group>"; };
@@ -84,6 +100,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B163F90E27460A5A002E8B99 /* AudioProperty */ = {
+			isa = PBXGroup;
+			children = (
+				B163F91327460B47002E8B99 /* AudioDeviceProperty.swift */,
+				B163F91127460A93002E8B99 /* AudioHardwareProperty.swift */,
+				B163F9072744EB55002E8B99 /* AudioObjectProperty.swift */,
+				B163F90F27460A6D002E8B99 /* AudioProperty.swift */,
+			);
+			path = AudioProperty;
+			sourceTree = "<group>";
+		};
 		B1BA3F342743E222007FD967 /* USBDeviceDetector */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,8 +147,13 @@
 		B1DD98582740D65B00D36719 /* USBDeviceDetectorApp */ = {
 			isa = PBXGroup;
 			children = (
+				B163F90E27460A5A002E8B99 /* AudioProperty */,
 				B1DD98592740D65B00D36719 /* AppDelegate.swift */,
 				B1DD985B2740D65B00D36719 /* ViewController.swift */,
+				B163F9032744E85C002E8B99 /* AudioDevice.swift */,
+				B163F90A2745445E002E8B99 /* AudioObjectController.swift */,
+				B163F90C2745491D002E8B99 /* AudioObjectPropertyValue.swift */,
+				B163F9052744E9D2002E8B99 /* AudioDeviceError.swift */,
 				B1DD985D2740D65D00D36719 /* Assets.xcassets */,
 				B1DD985F2740D65D00D36719 /* Main.storyboard */,
 				B1DD98622740D65D00D36719 /* USBDeviceDetectorApp.entitlements */,
@@ -255,8 +287,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B163F91227460A93002E8B99 /* AudioHardwareProperty.swift in Sources */,
 				B1DD985C2740D65B00D36719 /* ViewController.swift in Sources */,
+				B163F9062744E9D2002E8B99 /* AudioDeviceError.swift in Sources */,
+				B163F9082744EB55002E8B99 /* AudioObjectProperty.swift in Sources */,
 				B1DD985A2740D65B00D36719 /* AppDelegate.swift in Sources */,
+				B163F90B2745445E002E8B99 /* AudioObjectController.swift in Sources */,
+				B163F91027460A6D002E8B99 /* AudioProperty.swift in Sources */,
+				B163F91427460B47002E8B99 /* AudioDeviceProperty.swift in Sources */,
+				B163F9042744E85C002E8B99 /* AudioDevice.swift in Sources */,
+				B163F90D2745491D002E8B99 /* AudioObjectPropertyValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

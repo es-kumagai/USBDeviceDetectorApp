@@ -16,6 +16,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
         usbDeviceDetector.delegate = self
+        
+        try! print(AudioObjectController.devices.map { "\($0.name), \($0.canMute)" })
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
