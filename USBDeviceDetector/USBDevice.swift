@@ -34,3 +34,11 @@ public final class USBDevice : NSObject {
         return String(cString: buffer, encoding: .utf8)!
     }
 }
+
+public extension Sequence where Element == USBDevice {
+    
+    func contains(name: String) -> Bool {
+        
+        map(\.name).contains(name)
+    }
+}

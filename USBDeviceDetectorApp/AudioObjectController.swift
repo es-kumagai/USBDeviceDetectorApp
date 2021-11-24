@@ -19,30 +19,29 @@ final class AudioObjectController {
             let value = try get(AudioHardwareProperty.devices, from: systemObject)
             let devices = value.buffer(as: AudioObjectID.self)
             
-            return devices.map { AudioDevice(object: $0) }
+            return devices.map { AudioDevice(objectID: $0) }
         }
     }
 }
 
 internal extension AudioObjectController {
-    
+
     static func propertyExists(_ property: AudioProperty, on object: AudioObjectID) -> Bool {
 
-        AudioObjectHasProperty(object, property.address)
+        return AudioObjectHasProperty(object, property.address)
     }
 
-    static func propertySettable(_ property: AudioProperty, on object: AudioObjectID) -> Bool {
+    static func propertySettable(_ property: AudioProperty, on object: AudioObjectID) throws -> Bool {
         
         var settable: DarwinBoolean = false
+        let status = AudioObjectIsPropertySettable(object, property.address, &settable)
         
-        if case KERN_SUCCESS = AudioObjectIsPropertySettable(object, property.address, &settable) {
+        guard case KERN_SUCCESS = status else {
             
-            return settable.boolValue
+            throw AudioObjectOperationError.propertyOperationFailure(property, status: status)
         }
-        else {
-            
-            return false
-        }
+
+        return settable.boolValue
     }
     
     static func propertyValueSize(of property: AudioProperty, on object: AudioObjectID) throws -> UInt32 {
@@ -98,14 +97,17 @@ internal extension AudioObjectController {
             throw AudioObjectOperationError.propertyNotExist(property)
         }
         
-        guard propertySettable(property, on: object) else {
+        guard try propertySettable(property, on: object) else {
             
             throw AudioObjectOperationError.propertyNotSettable(property)
         }
         
-        guard case KERN_SUCCESS = AudioObjectSetPropertyData(object, property.address, 0, nil, value.size, value.baseAddress) else {
+        try value.withUnsafeBytes { bytes, size in
             
-            throw AudioObjectOperationError.propertySetFailure(property, value: value)
+            guard case KERN_SUCCESS = AudioObjectSetPropertyData(object, property.address, 0, nil, size, bytes) else {
+                
+                throw AudioObjectOperationError.propertySetFailure(property, value: value)
+            }
         }
     }
 

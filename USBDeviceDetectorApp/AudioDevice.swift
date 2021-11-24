@@ -9,7 +9,9 @@ import CoreAudio
 
 struct AudioDevice {
     
-    let object: AudioObjectID
+    typealias ObjectID = AudioObjectID
+    
+    let objectID: ObjectID
     
     var canMute: Bool {
     
@@ -23,7 +25,7 @@ struct AudioDevice {
             try! get(from: .mute).boolValue
         }
         
-        set(mute) {
+        nonmutating set(mute) {
             
             try! set(AudioObjectPropertyValue(mute), to: .mute)
         }
@@ -124,36 +126,43 @@ extension AudioDevice {
     
     func hasProperty(_ property: AudioDeviceProperty) -> Bool {
 
-        AudioObjectController.propertyExists(property, on: object)
+        AudioObjectController.propertyExists(property, on: objectID)
     }
     
     func hasProperty(_ property: AudioObjectProperty) -> Bool {
 
-        AudioObjectController.propertyExists(property, on: object)
+        AudioObjectController.propertyExists(property, on: objectID)
     }
     
     func isPropertySettable(_ property: AudioDeviceProperty) -> Bool {
         
-        AudioObjectController.propertySettable(property, on: object)
+        do {
+
+            return try AudioObjectController.propertySettable(property, on: objectID)
+        }
+        catch {
+            
+            return false
+        }
     }
     
     func `get`(from property: AudioDeviceProperty) throws -> AudioObjectPropertyValue {
     
-        try AudioObjectController.get(property, from: object)
+        try AudioObjectController.get(property, from: objectID)
     }
     
     func `set`(_ value: AudioObjectPropertyValue, to property: AudioDeviceProperty) throws {
         
-        try AudioObjectController.set(value, for: property, to: object)
+        try AudioObjectController.set(value, for: property, to: objectID)
     }
 
     func `get`(from property: AudioObjectProperty) throws -> AudioObjectPropertyValue {
     
-        try AudioObjectController.get(property, from: object)
+        try AudioObjectController.get(property, from: objectID)
     }
     
     func `set`(_ value: AudioObjectPropertyValue, to property: AudioObjectProperty) throws {
         
-        try AudioObjectController.set(value, for: property, to: object)
+        try AudioObjectController.set(value, for: property, to: objectID)
     }
 }

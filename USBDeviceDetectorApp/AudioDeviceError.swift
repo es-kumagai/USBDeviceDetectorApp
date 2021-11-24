@@ -13,5 +13,6 @@ enum AudioObjectOperationError : Error {
     case propertyNotSettable(AudioProperty)
     case propertySetFailure(AudioProperty, value: AudioObjectPropertyValue)
     case propertyGetFailure(AudioProperty, status: OSStatus)
+    case propertyOperationFailure(AudioProperty, status: OSStatus)
     case propertyValueSizeMismatch(expected: UInt32, actual: UInt32)
 }

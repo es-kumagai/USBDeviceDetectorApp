@@ -29,6 +29,8 @@ struct AudioObjectPropertyValue {
             pointer.deallocate()
         }
         
+        buffer.pointee = number
+        
         self.init(data: Data(bytesNoCopy: buffer, count: MemoryLayout<UInt32>.size, deallocator: deallocator))
     }
     
@@ -52,9 +54,12 @@ struct AudioObjectPropertyValue {
         data.isEmpty
     }
     
-    var baseAddress: UnsafeRawPointer {
+    func withUnsafeBytes(_ body: (_ bytes: UnsafeRawPointer, _ byteSize: UInt32) throws -> Void) rethrows {
         
-        data.withUnsafeBytes { $0.baseAddress! }
+        try data.withUnsafeBytes {
+            
+            try body($0.baseAddress!, UInt32($0.count))
+        }
     }
     
     var number: UInt32 {

@@ -6,12 +6,26 @@
 //
 
 import Cocoa
+import Ocean
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NotificationObservable {
+    
+    @IBOutlet private(set) var activityLogView: ActivityLogView!
+    
+    var notificationHandlers = Notification.Handlers()
+
+    deinit {
+    
+        notificationHandlers.releaseAll()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        observe(ActivityLogNotification.self) { [unowned self] notification in
+            
+            activityLogView.appendLog(notification.log)
+        }
     }
 
     override var representedObject: Any? {

@@ -9,5 +9,5 @@ import CoreAudio
 
 final class AudioDeviceProperty : AudioProperty {
     
-    static let mute = AudioDeviceProperty(selector: kAudioDevicePropertyMute)
+    static let mute = AudioDeviceProperty(selector: kAudioDevicePropertyMute, scope: kAudioDevicePropertyScopeInput)
 }
