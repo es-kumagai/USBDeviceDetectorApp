@@ -1,25 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Ocean",
-        "repositoryURL": "git@github.com:es-kumagai/Ocean.git",
-        "state": {
-          "branch": "master",
-          "revision": "0174868b817d0306c42f19f9ec3c906a9ab16e48",
-          "version": null
-        }
-      },
-      {
-        "package": "Swim",
-        "repositoryURL": "https://github.com/es-kumagai/Swim",
-        "state": {
-          "branch": "master",
-          "revision": "c9cac424b37375426cf8b50e8b2dc4116bd0c797",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "ocean",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:es-kumagai/Ocean.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "0174868b817d0306c42f19f9ec3c906a9ab16e48"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "swim",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/es-kumagai/Swim",
+      "state" : {
+        "branch" : "master",
+        "revision" : "c9cac424b37375426cf8b50e8b2dc4116bd0c797"
+      }
+    },
+    {
+      "identity" : "usbdevicedetector",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:es-kumagai/USBDeviceDetector.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5f50c3dcc3dfe62c52bdd090181b002cf651ca90"
+      }
+    }
+  ],
+  "version" : 2
 }

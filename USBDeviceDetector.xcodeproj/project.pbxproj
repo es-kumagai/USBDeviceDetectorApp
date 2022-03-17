@@ -15,22 +15,18 @@
 		B163F91027460A6D002E8B99 /* AudioProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F90F27460A6D002E8B99 /* AudioProperty.swift */; };
 		B163F91227460A93002E8B99 /* AudioHardwareProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F91127460A93002E8B99 /* AudioHardwareProperty.swift */; };
 		B163F91427460B47002E8B99 /* AudioDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F91327460B47002E8B99 /* AudioDeviceProperty.swift */; };
+		B16FF9DA27E183C300F2D5BE /* TriggerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16FF9D927E183C300F2D5BE /* TriggerApp.swift */; };
+		B16FF9DC27E183C300F2D5BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16FF9DB27E183C300F2D5BE /* ContentView.swift */; };
+		B16FF9DE27E183C400F2D5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16FF9DD27E183C400F2D5BE /* Assets.xcassets */; };
+		B16FF9E127E183C400F2D5BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16FF9E027E183C400F2D5BE /* Preview Assets.xcassets */; };
 		B19FAD2E2747155D003979F8 /* MutableAudioDeviceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FAD2D2747155D003979F8 /* MutableAudioDeviceController.swift */; };
-		B1BA3F362743E222007FD967 /* USBDeviceDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = B1BA3F352743E222007FD967 /* USBDeviceDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B1BA3F392743E222007FD967 /* USBDeviceDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BA3F332743E222007FD967 /* USBDeviceDetector.framework */; };
-		B1BA3F3A2743E222007FD967 /* USBDeviceDetector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1BA3F332743E222007FD967 /* USBDeviceDetector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B1BA3F3E2743E22E007FD967 /* USBDeviceSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD988D2740EEDD00D36719 /* USBDeviceSequence.swift */; };
-		B1BA3F3F2743E22E007FD967 /* USBDeviceDetectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD98912740F81900D36719 /* USBDeviceDetectorDelegate.swift */; };
-		B1BA3F402743E22E007FD967 /* USBDeviceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD98842740D67800D36719 /* USBDeviceDetector.swift */; };
-		B1BA3F412743E22E007FD967 /* IOObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD988F2740EFB000D36719 /* IOObject.swift */; };
-		B1BA3F422743E22E007FD967 /* USBDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD98862740E4DF00D36719 /* USBDevice.swift */; };
-		B1BA3F432743E22E007FD967 /* IOIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF3E727427F2D0056BC3D /* IOIterator.swift */; };
-		B1BA3F442743E22E007FD967 /* USBDeviceDetectorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD989327410E5000D36719 /* USBDeviceDetectorError.swift */; };
+		B1D8003C27E34EDE00A64922 /* USBDeviceDetector in Frameworks */ = {isa = PBXBuildFile; productRef = B1D8003B27E34EDE00A64922 /* USBDeviceDetector */; };
+		B1D8003E27E34F2700A64922 /* USBDeviceDetector in Frameworks */ = {isa = PBXBuildFile; productRef = B1D8003D27E34F2700A64922 /* USBDeviceDetector */; };
+		B1D8004127E3599400A64922 /* Ocean in Frameworks */ = {isa = PBXBuildFile; productRef = B1D8004027E3599400A64922 /* Ocean */; };
+		B1D8004227E359B900A64922 /* Ocean in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B1D8004027E3599400A64922 /* Ocean */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B1DBC470274E40220068D648 /* ActivityLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC46F274E40220068D648 /* ActivityLogView.swift */; };
-		B1DBC473274E4E570068D648 /* Ocean in Frameworks */ = {isa = PBXBuildFile; productRef = B1DBC472274E4E570068D648 /* Ocean */; };
 		B1DBC475274E4E6C0068D648 /* ActivityLogNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC474274E4E6C0068D648 /* ActivityLogNotification.swift */; };
 		B1DBC477274E4E9F0068D648 /* ActivityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC476274E4E9F0068D648 /* ActivityLog.swift */; };
-		B1DBC478274E57750068D648 /* Ocean in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B1DBC472274E4E570068D648 /* Ocean */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B1DBC47A274E5E5D0068D648 /* DeviceMatchingPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC479274E5E5D0068D648 /* DeviceMatchingPattern.swift */; };
 		B1DBC47C274E5E740068D648 /* DeviceMatchingPatternItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC47B274E5E740068D648 /* DeviceMatchingPatternItem.swift */; };
 		B1DBC47E274E63BD0068D648 /* ActivityLogOptionDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC47D274E63BD0068D648 /* ActivityLogOptionDescriptions.swift */; };
@@ -40,16 +36,6 @@
 		B1DD98612740D65D00D36719 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DD985F2740D65D00D36719 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B1BA3F372743E222007FD967 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B1DD984E2740D65B00D36719 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B1BA3F322743E222007FD967;
-			remoteInfo = USBDeviceDetector;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		B1BA3F2D2743E1E1007FD967 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -57,8 +43,17 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B1BA3F3A2743E222007FD967 /* USBDeviceDetector.framework in Embed Frameworks */,
-				B1DBC478274E57750068D648 /* Ocean in Embed Frameworks */,
+				B1D8004227E359B900A64922 /* Ocean in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1D8003927E3397500A64922 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,10 +69,13 @@
 		B163F90F27460A6D002E8B99 /* AudioProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioProperty.swift; sourceTree = "<group>"; };
 		B163F91127460A93002E8B99 /* AudioHardwareProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHardwareProperty.swift; sourceTree = "<group>"; };
 		B163F91327460B47002E8B99 /* AudioDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeviceProperty.swift; sourceTree = "<group>"; };
-		B18CF3E727427F2D0056BC3D /* IOIterator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOIterator.swift; sourceTree = "<group>"; };
+		B16FF9D727E183C300F2D5BE /* Trigger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trigger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B16FF9D927E183C300F2D5BE /* TriggerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerApp.swift; sourceTree = "<group>"; };
+		B16FF9DB27E183C300F2D5BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B16FF9DD27E183C400F2D5BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B16FF9E027E183C400F2D5BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B16FF9E227E183C400F2D5BE /* Trigger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Trigger.entitlements; sourceTree = "<group>"; };
 		B19FAD2D2747155D003979F8 /* MutableAudioDeviceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableAudioDeviceController.swift; sourceTree = "<group>"; };
-		B1BA3F332743E222007FD967 /* USBDeviceDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = USBDeviceDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1BA3F352743E222007FD967 /* USBDeviceDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USBDeviceDetector.h; sourceTree = "<group>"; };
 		B1DBC46F274E40220068D648 /* ActivityLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogView.swift; sourceTree = "<group>"; };
 		B1DBC474274E4E6C0068D648 /* ActivityLogNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogNotification.swift; sourceTree = "<group>"; };
 		B1DBC476274E4E9F0068D648 /* ActivityLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLog.swift; sourceTree = "<group>"; };
@@ -90,19 +88,14 @@
 		B1DD985D2740D65D00D36719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1DD98602740D65D00D36719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1DD98622740D65D00D36719 /* USBDeviceDetectorApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = USBDeviceDetectorApp.entitlements; sourceTree = "<group>"; };
-		B1DD98842740D67800D36719 /* USBDeviceDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDeviceDetector.swift; sourceTree = "<group>"; };
-		B1DD98862740E4DF00D36719 /* USBDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDevice.swift; sourceTree = "<group>"; };
-		B1DD988D2740EEDD00D36719 /* USBDeviceSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDeviceSequence.swift; sourceTree = "<group>"; };
-		B1DD988F2740EFB000D36719 /* IOObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOObject.swift; sourceTree = "<group>"; };
-		B1DD98912740F81900D36719 /* USBDeviceDetectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDeviceDetectorDelegate.swift; sourceTree = "<group>"; };
-		B1DD989327410E5000D36719 /* USBDeviceDetectorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDeviceDetectorError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B1BA3F302743E222007FD967 /* Frameworks */ = {
+		B16FF9D427E183C300F2D5BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D8003E27E34F2700A64922 /* USBDeviceDetector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,8 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1BA3F392743E222007FD967 /* USBDeviceDetector.framework in Frameworks */,
-				B1DBC473274E4E570068D648 /* Ocean in Frameworks */,
+				B1D8003C27E34EDE00A64922 /* USBDeviceDetector in Frameworks */,
+				B1D8004127E3599400A64922 /* Ocean in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,27 +122,40 @@
 			path = AudioProperty;
 			sourceTree = "<group>";
 		};
-		B1BA3F342743E222007FD967 /* USBDeviceDetector */ = {
+		B16FF9D827E183C300F2D5BE /* Trigger */ = {
 			isa = PBXGroup;
 			children = (
-				B1BA3F352743E222007FD967 /* USBDeviceDetector.h */,
-				B1DD98842740D67800D36719 /* USBDeviceDetector.swift */,
-				B1DD989327410E5000D36719 /* USBDeviceDetectorError.swift */,
-				B1DD98912740F81900D36719 /* USBDeviceDetectorDelegate.swift */,
-				B1DD98862740E4DF00D36719 /* USBDevice.swift */,
-				B1DD988D2740EEDD00D36719 /* USBDeviceSequence.swift */,
-				B1DD988F2740EFB000D36719 /* IOObject.swift */,
-				B18CF3E727427F2D0056BC3D /* IOIterator.swift */,
+				B16FF9D927E183C300F2D5BE /* TriggerApp.swift */,
+				B16FF9DB27E183C300F2D5BE /* ContentView.swift */,
+				B16FF9DD27E183C400F2D5BE /* Assets.xcassets */,
+				B16FF9E227E183C400F2D5BE /* Trigger.entitlements */,
+				B16FF9DF27E183C400F2D5BE /* Preview Content */,
 			);
-			path = USBDeviceDetector;
+			path = Trigger;
+			sourceTree = "<group>";
+		};
+		B16FF9DF27E183C400F2D5BE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B16FF9E027E183C400F2D5BE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B1D8003427E3397400A64922 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B1DD984D2740D65B00D36719 = {
 			isa = PBXGroup;
 			children = (
 				B1DD98582740D65B00D36719 /* USBDeviceDetectorApp */,
-				B1BA3F342743E222007FD967 /* USBDeviceDetector */,
+				B16FF9D827E183C300F2D5BE /* Trigger */,
 				B1DD98572740D65B00D36719 /* Products */,
+				B1D8003427E3397400A64922 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				B1DD98562740D65B00D36719 /* USBDeviceDetectorApp.app */,
-				B1BA3F332743E222007FD967 /* USBDeviceDetector.framework */,
+				B16FF9D727E183C300F2D5BE /* Trigger.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,35 +194,27 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		B1BA3F2E2743E222007FD967 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B1BA3F362743E222007FD967 /* USBDeviceDetector.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		B1BA3F322743E222007FD967 /* USBDeviceDetector */ = {
+		B16FF9D627E183C300F2D5BE /* Trigger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B1BA3F3B2743E222007FD967 /* Build configuration list for PBXNativeTarget "USBDeviceDetector" */;
+			buildConfigurationList = B16FF9E527E183C400F2D5BE /* Build configuration list for PBXNativeTarget "Trigger" */;
 			buildPhases = (
-				B1BA3F2E2743E222007FD967 /* Headers */,
-				B1BA3F2F2743E222007FD967 /* Sources */,
-				B1BA3F302743E222007FD967 /* Frameworks */,
-				B1BA3F312743E222007FD967 /* Resources */,
+				B16FF9D327E183C300F2D5BE /* Sources */,
+				B16FF9D427E183C300F2D5BE /* Frameworks */,
+				B16FF9D527E183C300F2D5BE /* Resources */,
+				B1D8003927E3397500A64922 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = USBDeviceDetector;
-			productName = USBDeviceDetector;
-			productReference = B1BA3F332743E222007FD967 /* USBDeviceDetector.framework */;
-			productType = "com.apple.product-type.framework";
+			name = Trigger;
+			packageProductDependencies = (
+				B1D8003D27E34F2700A64922 /* USBDeviceDetector */,
+			);
+			productName = Trigger;
+			productReference = B16FF9D727E183C300F2D5BE /* Trigger.app */;
+			productType = "com.apple.product-type.application";
 		};
 		B1DD98552740D65B00D36719 /* USBDeviceDetectorApp */ = {
 			isa = PBXNativeTarget;
@@ -230,11 +228,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				B1BA3F382743E222007FD967 /* PBXTargetDependency */,
 			);
 			name = USBDeviceDetectorApp;
 			packageProductDependencies = (
-				B1DBC472274E4E570068D648 /* Ocean */,
+				B1D8003B27E34EDE00A64922 /* USBDeviceDetector */,
+				B1D8004027E3599400A64922 /* Ocean */,
 			);
 			productName = USBDeviceDetector;
 			productReference = B1DD98562740D65B00D36719 /* USBDeviceDetectorApp.app */;
@@ -247,11 +245,11 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					B1BA3F322743E222007FD967 = {
-						CreatedOnToolsVersion = 13.1;
+					B16FF9D627E183C300F2D5BE = {
+						CreatedOnToolsVersion = 13.3;
 					};
 					B1DD98552740D65B00D36719 = {
 						CreatedOnToolsVersion = 13.1;
@@ -268,23 +266,26 @@
 			);
 			mainGroup = B1DD984D2740D65B00D36719;
 			packageReferences = (
-				B1DBC471274E4E570068D648 /* XCRemoteSwiftPackageReference "Ocean" */,
+				B1D8003A27E34EDE00A64922 /* XCRemoteSwiftPackageReference "USBDeviceDetector" */,
+				B1D8003F27E3599400A64922 /* XCRemoteSwiftPackageReference "Ocean" */,
 			);
 			productRefGroup = B1DD98572740D65B00D36719 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				B16FF9D627E183C300F2D5BE /* Trigger */,
 				B1DD98552740D65B00D36719 /* USBDeviceDetectorApp */,
-				B1BA3F322743E222007FD967 /* USBDeviceDetector */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B1BA3F312743E222007FD967 /* Resources */ = {
+		B16FF9D527E183C300F2D5BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B16FF9E127E183C400F2D5BE /* Preview Assets.xcassets in Resources */,
+				B16FF9DE27E183C400F2D5BE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,17 +301,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B1BA3F2F2743E222007FD967 /* Sources */ = {
+		B16FF9D327E183C300F2D5BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1BA3F442743E22E007FD967 /* USBDeviceDetectorError.swift in Sources */,
-				B1BA3F412743E22E007FD967 /* IOObject.swift in Sources */,
-				B1BA3F422743E22E007FD967 /* USBDevice.swift in Sources */,
-				B1BA3F3E2743E22E007FD967 /* USBDeviceSequence.swift in Sources */,
-				B1BA3F432743E22E007FD967 /* IOIterator.swift in Sources */,
-				B1BA3F402743E22E007FD967 /* USBDeviceDetector.swift in Sources */,
-				B1BA3F3F2743E22E007FD967 /* USBDeviceDetectorDelegate.swift in Sources */,
+				B16FF9DC27E183C300F2D5BE /* ContentView.swift in Sources */,
+				B16FF9DA27E183C300F2D5BE /* TriggerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,14 +336,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		B1BA3F382743E222007FD967 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B1BA3F322743E222007FD967 /* USBDeviceDetector */;
-			targetProxy = B1BA3F372743E222007FD967 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		B1DD985F2740D65D00D36719 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -360,63 +348,61 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B1BA3F3C2743E222007FD967 /* Debug */ = {
+		B16FF9E327E183C400F2D5BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Trigger/Trigger.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Trigger/Preview Content\"";
 				DEVELOPMENT_TEAM = 89282N6UM7;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.USBDeviceDetector";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.Trigger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		B1BA3F3D2743E222007FD967 /* Release */ = {
+		B16FF9E427E183C400F2D5BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Trigger/Trigger.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Trigger/Preview Content\"";
 				DEVELOPMENT_TEAM = 89282N6UM7;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.USBDeviceDetector";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.Trigger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -538,10 +524,10 @@
 		B1DD987C2740D65D00D36719 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = USBDeviceDetectorApp/USBDeviceDetectorApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
@@ -566,10 +552,10 @@
 		B1DD987D2740D65D00D36719 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = USBDeviceDetectorApp/USBDeviceDetectorApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
@@ -594,11 +580,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B1BA3F3B2743E222007FD967 /* Build configuration list for PBXNativeTarget "USBDeviceDetector" */ = {
+		B16FF9E527E183C400F2D5BE /* Build configuration list for PBXNativeTarget "Trigger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B1BA3F3C2743E222007FD967 /* Debug */,
-				B1BA3F3D2743E222007FD967 /* Release */,
+				B16FF9E327E183C400F2D5BE /* Debug */,
+				B16FF9E427E183C400F2D5BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -624,7 +610,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B1DBC471274E4E570068D648 /* XCRemoteSwiftPackageReference "Ocean" */ = {
+		B1D8003A27E34EDE00A64922 /* XCRemoteSwiftPackageReference "USBDeviceDetector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:es-kumagai/USBDeviceDetector.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		B1D8003F27E3599400A64922 /* XCRemoteSwiftPackageReference "Ocean" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:es-kumagai/Ocean.git";
 			requirement = {
@@ -635,9 +629,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B1DBC472274E4E570068D648 /* Ocean */ = {
+		B1D8003B27E34EDE00A64922 /* USBDeviceDetector */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B1DBC471274E4E570068D648 /* XCRemoteSwiftPackageReference "Ocean" */;
+			package = B1D8003A27E34EDE00A64922 /* XCRemoteSwiftPackageReference "USBDeviceDetector" */;
+			productName = USBDeviceDetector;
+		};
+		B1D8003D27E34F2700A64922 /* USBDeviceDetector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1D8003A27E34EDE00A64922 /* XCRemoteSwiftPackageReference "USBDeviceDetector" */;
+			productName = USBDeviceDetector;
+		};
+		B1D8004027E3599400A64922 /* Ocean */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1D8003F27E3599400A64922 /* XCRemoteSwiftPackageReference "Ocean" */;
 			productName = Ocean;
 		};
 /* End XCSwiftPackageProductDependency section */
