@@ -24,7 +24,6 @@ class ActivityLogView: NSTextView {
         }
     }
     
-    @MainActor
     func scrollToEnd() {
 
         scroll(NSPoint(x: 0, y: frame.height))
