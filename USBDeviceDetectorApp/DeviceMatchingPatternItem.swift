@@ -15,6 +15,76 @@ extension DeviceMatchingPattern {
     }
 }
 
+extension DeviceMatchingPattern.Item : Codable {
+
+    init(from decoder: Decoder) throws {
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let value = try container.decode(String.self, forKey: .value)
+        
+        switch try container.decode(ItemKey.self, forKey: .key) {
+            
+        case .objectID:
+            guard let value = AudioDevice.ObjectID(value) else {
+                throw DecodingError.typeMismatch(AudioDevice.ObjectID.self, .init(codingPath: [CodingKeys.value], debugDescription: "Expected type is \(AudioDevice.ObjectID.self), but actual is \(type(of: value))."))
+            }
+            self = .objectID(value)
+            
+        case .namePrefix:
+            self = .namePrefix(value)
+            
+        case .name:
+            self = .name(value)
+        }
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(ItemKey(from: self), forKey: .key)
+
+        switch self {
+            
+        case .objectID(let objectID):
+            try container.encode(String(objectID), forKey: .value)
+
+        case .namePrefix(let name), .name(let name):
+            try container.encode(name, forKey: .value)
+        }
+    }
+}
+
+private extension DeviceMatchingPattern.Item {
+
+    enum ItemKey : String, Codable {
+    
+        case objectID = "Object ID"
+        case namePrefix = "Name Prefix"
+        case name = "Name"
+        
+        init(from item: DeviceMatchingPattern.Item) {
+            
+            switch item {
+                
+            case .objectID:
+                self = .objectID
+                
+            case .namePrefix:
+                self = .namePrefix
+                
+            case .name:
+                self = .name
+            }
+        }
+    }
+    
+    enum CodingKeys : String, CodingKey {
+        
+        case key = "Key"
+        case value = "Value"
+    }
+}
+
 extension DeviceMatchingPattern {
     
     func matching(to device: AudioDevice) -> Bool {
@@ -24,7 +94,7 @@ extension DeviceMatchingPattern {
         case .matchAll:
             return true
             
-        case .notMatchAll:
+        case .notMatchAny:
             return false
             
         case .match(.objectID(let objectID)):

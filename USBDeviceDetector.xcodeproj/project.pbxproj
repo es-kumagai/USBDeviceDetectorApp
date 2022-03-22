@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B141529827E48F2400B99ECC /* Ocean in Frameworks */ = {isa = PBXBuildFile; productRef = B141529727E48F2400B99ECC /* Ocean */; };
+		B141529927E48F3700B99ECC /* Ocean in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B141529727E48F2400B99ECC /* Ocean */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B141529B27E48F4100B99ECC /* USBDeviceDetector in Frameworks */ = {isa = PBXBuildFile; productRef = B141529A27E48F4100B99ECC /* USBDeviceDetector */; };
+		B14152A327E9A92200B99ECC /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14152A227E9A92200B99ECC /* Configuration.swift */; };
 		B163F9042744E85C002E8B99 /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F9032744E85C002E8B99 /* AudioDevice.swift */; };
 		B163F9062744E9D2002E8B99 /* AudioDeviceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F9052744E9D2002E8B99 /* AudioDeviceError.swift */; };
 		B163F9082744EB55002E8B99 /* AudioObjectProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F9072744EB55002E8B99 /* AudioObjectProperty.swift */; };
@@ -20,10 +24,6 @@
 		B16FF9DE27E183C400F2D5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16FF9DD27E183C400F2D5BE /* Assets.xcassets */; };
 		B16FF9E127E183C400F2D5BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16FF9E027E183C400F2D5BE /* Preview Assets.xcassets */; };
 		B19FAD2E2747155D003979F8 /* MutableAudioDeviceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FAD2D2747155D003979F8 /* MutableAudioDeviceController.swift */; };
-		B1D8003C27E34EDE00A64922 /* USBDeviceDetector in Frameworks */ = {isa = PBXBuildFile; productRef = B1D8003B27E34EDE00A64922 /* USBDeviceDetector */; };
-		B1D8003E27E34F2700A64922 /* USBDeviceDetector in Frameworks */ = {isa = PBXBuildFile; productRef = B1D8003D27E34F2700A64922 /* USBDeviceDetector */; };
-		B1D8004127E3599400A64922 /* Ocean in Frameworks */ = {isa = PBXBuildFile; productRef = B1D8004027E3599400A64922 /* Ocean */; };
-		B1D8004227E359B900A64922 /* Ocean in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B1D8004027E3599400A64922 /* Ocean */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B1DBC470274E40220068D648 /* ActivityLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC46F274E40220068D648 /* ActivityLogView.swift */; };
 		B1DBC475274E4E6C0068D648 /* ActivityLogNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC474274E4E6C0068D648 /* ActivityLogNotification.swift */; };
 		B1DBC477274E4E9F0068D648 /* ActivityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC476274E4E9F0068D648 /* ActivityLog.swift */; };
@@ -43,7 +43,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B1D8004227E359B900A64922 /* Ocean in Embed Frameworks */,
+				B141529927E48F3700B99ECC /* Ocean in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B14152A227E9A92200B99ECC /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		B163F9032744E85C002E8B99 /* AudioDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
 		B163F9052744E9D2002E8B99 /* AudioDeviceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeviceError.swift; sourceTree = "<group>"; };
 		B163F9072744EB55002E8B99 /* AudioObjectProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioObjectProperty.swift; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1D8003E27E34F2700A64922 /* USBDeviceDetector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1D8003C27E34EDE00A64922 /* USBDeviceDetector in Frameworks */,
-				B1D8004127E3599400A64922 /* Ocean in Frameworks */,
+				B141529827E48F2400B99ECC /* Ocean in Frameworks */,
+				B141529B27E48F4100B99ECC /* USBDeviceDetector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +173,7 @@
 			children = (
 				B163F90E27460A5A002E8B99 /* AudioProperty */,
 				B1DD98592740D65B00D36719 /* AppDelegate.swift */,
+				B14152A227E9A92200B99ECC /* Configuration.swift */,
 				B1DD985B2740D65B00D36719 /* ViewController.swift */,
 				B163F9032744E85C002E8B99 /* AudioDevice.swift */,
 				B163F90A2745445E002E8B99 /* AudioObjectController.swift */,
@@ -210,7 +211,6 @@
 			);
 			name = Trigger;
 			packageProductDependencies = (
-				B1D8003D27E34F2700A64922 /* USBDeviceDetector */,
 			);
 			productName = Trigger;
 			productReference = B16FF9D727E183C300F2D5BE /* Trigger.app */;
@@ -231,8 +231,8 @@
 			);
 			name = USBDeviceDetectorApp;
 			packageProductDependencies = (
-				B1D8003B27E34EDE00A64922 /* USBDeviceDetector */,
-				B1D8004027E3599400A64922 /* Ocean */,
+				B141529727E48F2400B99ECC /* Ocean */,
+				B141529A27E48F4100B99ECC /* USBDeviceDetector */,
 			);
 			productName = USBDeviceDetector;
 			productReference = B1DD98562740D65B00D36719 /* USBDeviceDetectorApp.app */;
@@ -266,8 +266,8 @@
 			);
 			mainGroup = B1DD984D2740D65B00D36719;
 			packageReferences = (
-				B1D8003A27E34EDE00A64922 /* XCRemoteSwiftPackageReference "USBDeviceDetector" */,
-				B1D8003F27E3599400A64922 /* XCRemoteSwiftPackageReference "Ocean" */,
+				B141529327E48E9000B99ECC /* XCRemoteSwiftPackageReference "USBDeviceDetector" */,
+				B141529627E48F2400B99ECC /* XCRemoteSwiftPackageReference "Ocean" */,
 			);
 			productRefGroup = B1DD98572740D65B00D36719 /* Products */;
 			projectDirPath = "";
@@ -326,6 +326,7 @@
 				B163F90B2745445E002E8B99 /* AudioObjectController.swift in Sources */,
 				B1DBC47E274E63BD0068D648 /* ActivityLogOptionDescriptions.swift in Sources */,
 				B163F91027460A6D002E8B99 /* AudioProperty.swift in Sources */,
+				B14152A327E9A92200B99ECC /* Configuration.swift in Sources */,
 				B163F91427460B47002E8B99 /* AudioDeviceProperty.swift in Sources */,
 				B1DBC47A274E5E5D0068D648 /* DeviceMatchingPattern.swift in Sources */,
 				B163F9042744E85C002E8B99 /* AudioDevice.swift in Sources */,
@@ -610,17 +611,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B1D8003A27E34EDE00A64922 /* XCRemoteSwiftPackageReference "USBDeviceDetector" */ = {
+		B141529327E48E9000B99ECC /* XCRemoteSwiftPackageReference "USBDeviceDetector" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:es-kumagai/USBDeviceDetector.git";
+			repositoryURL = "https://github.com/es-kumagai/USBDeviceDetector.git";
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
-		B1D8003F27E3599400A64922 /* XCRemoteSwiftPackageReference "Ocean" */ = {
+		B141529627E48F2400B99ECC /* XCRemoteSwiftPackageReference "Ocean" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:es-kumagai/Ocean.git";
+			repositoryURL = "https://github.com/es-kumagai/Ocean.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -629,20 +630,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B1D8003B27E34EDE00A64922 /* USBDeviceDetector */ = {
+		B141529727E48F2400B99ECC /* Ocean */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B1D8003A27E34EDE00A64922 /* XCRemoteSwiftPackageReference "USBDeviceDetector" */;
-			productName = USBDeviceDetector;
-		};
-		B1D8003D27E34F2700A64922 /* USBDeviceDetector */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B1D8003A27E34EDE00A64922 /* XCRemoteSwiftPackageReference "USBDeviceDetector" */;
-			productName = USBDeviceDetector;
-		};
-		B1D8004027E3599400A64922 /* Ocean */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B1D8003F27E3599400A64922 /* XCRemoteSwiftPackageReference "Ocean" */;
+			package = B141529627E48F2400B99ECC /* XCRemoteSwiftPackageReference "Ocean" */;
 			productName = Ocean;
+		};
+		B141529A27E48F4100B99ECC /* USBDeviceDetector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B141529327E48E9000B99ECC /* XCRemoteSwiftPackageReference "USBDeviceDetector" */;
+			productName = USBDeviceDetector;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

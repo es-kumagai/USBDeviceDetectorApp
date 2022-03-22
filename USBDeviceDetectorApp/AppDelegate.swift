@@ -11,6 +11,7 @@ import USBDeviceDetector
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    var configuration = try! Configuration()
     var mutableAudioDeviceController = try! MutableAudioDeviceController()
     var usbDeviceDetector = USBDeviceDetector()
     
@@ -18,12 +19,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         activityLog("The application did start.")
         
-        mutableAudioDeviceController.deviceMatchingPatterns = [
-            
-            .unmatch(.namePrefix("Soundflower")),
-            .unmatch(.name("AirPods Max #1")),
-        ]
+        mutableAudioDeviceController.deviceMatchingPatterns = configuration.deviceMatchingPatterns
         
+        configuration.deviceMatchingPatterns = mutableAudioDeviceController.deviceMatchingPatterns
+
         usbDeviceDetector.delegate = self
         
         activityLog(label: "Matching patterns") {
@@ -39,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 deviceNames
             }
             
-            switch deviceNames.contains(Self.triggerDeviceName) {
+            switch isTriggerDeviceExists(in: deviceNames) {
                 
             case true:
                 try mutableAudioDeviceController.unmuteAll()
@@ -64,9 +63,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
-extension AppDelegate : USBDeviceDetectorDelegate {
+extension AppDelegate {
+
+    func isTriggerDeviceExists<Devices: Sequence>(in deviceNames: Devices) -> Bool where Devices.Element == String {
+        
+        guard let deviceName = configuration.triggerDeviceName else {
+            
+            return false
+        }
+        
+        return deviceNames.contains(deviceName)
+    }
     
-    static let triggerDeviceName = "Microsoft® 2.4GHz Transceiver v9.0"
+    func isTriggerDeviceExists<Devices: Sequence>(in devices: Devices) -> Bool where Devices.Element == USBDevice {
+        
+        isTriggerDeviceExists(in: devices.map(\.name))
+    }
+    
+    func isTriggerDeviceExists<Devices: Sequence>(in devices: Devices) -> Bool where Devices.Element == AudioDevice {
+        
+        isTriggerDeviceExists(in: devices.map(\.name))
+    }
+}
+
+extension AppDelegate : USBDeviceDetectorDelegate {
     
     func usbDeviceDetector(_ detector: USBDeviceDetector, devicesDidAdd devices: [USBDevice]) {
 
@@ -76,7 +96,7 @@ extension AppDelegate : USBDeviceDetectorDelegate {
         
         do {
             
-            if devices.contains(name: Self.triggerDeviceName) {
+            if isTriggerDeviceExists(in: devices) {
                 
                 try mutableAudioDeviceController.unmuteAll()
             }
@@ -95,7 +115,7 @@ extension AppDelegate : USBDeviceDetectorDelegate {
 
         do {
 
-            if devices.contains(name: Self.triggerDeviceName) {
+            if isTriggerDeviceExists(in: devices) {
                 
                 try mutableAudioDeviceController.muteAll()
             }
