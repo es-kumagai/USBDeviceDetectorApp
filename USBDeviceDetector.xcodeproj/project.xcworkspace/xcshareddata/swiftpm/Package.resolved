@@ -21,10 +21,10 @@
     {
       "identity" : "usbdevicedetector",
       "kind" : "remoteSourceControl",
-      "location" : "git@github.com:es-kumagai/USBDeviceDetector.git",
+      "location" : "https://github.com/es-kumagai/USBDeviceDetector.git",
       "state" : {
         "branch" : "main",
-        "revision" : "5f50c3dcc3dfe62c52bdd090181b002cf651ca90"
+        "revision" : "1ad83b61e4516f7d0676f700696cf8240941016a"
       }
     }
   ],
