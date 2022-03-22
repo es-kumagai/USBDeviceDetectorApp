@@ -13,3 +13,4 @@ If you want to observe a USB device named `Microsoft® 2.4GHz Transceiver v9.0`,
 ```
 defaults write jp.ez-net.USBDeviceDetectorApp "Trigger Device Name" "Microsoft® 2.4GHz Transceiver v9.0"
 ```
+> If you modified this app's configuration by the property list file directly, it seems to need to execute `defaults read jp.ez-net.USBDeviceDetector` in terminal.
