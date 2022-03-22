@@ -88,7 +88,7 @@ extension AppDelegate {
 
 extension AppDelegate : USBDeviceDetectorDelegate {
     
-    func usbDeviceDetector(_ detector: USBDeviceDetector, devicesDidAdd devices: [USBDevice]) {
+    func usbDeviceDetector(_ detector: USBDeviceDetector, devicesDidAdd devices: USBDevices) {
 
         activityLog(label: "Devices have been added") {
             devices.map(\.name)
@@ -107,7 +107,7 @@ extension AppDelegate : USBDeviceDetectorDelegate {
         }
     }
     
-    func usbDeviceDetector(_ detector: USBDeviceDetector, devicesDidRemove devices: [USBDevice]) {
+    func usbDeviceDetector(_ detector: USBDeviceDetector, devicesDidRemove devices: USBDevices) {
         
         activityLog(label: "Devices have been removed") {
             devices.map(\.name)
