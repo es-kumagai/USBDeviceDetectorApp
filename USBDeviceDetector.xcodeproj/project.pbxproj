@@ -298,7 +298,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B1DD98512740D65B00D36719 /* Build configuration list for PBXProject " USBDeviceDetector" */;
+			buildConfigurationList = B1DD98512740D65B00D36719 /* Build configuration list for PBXProject "USBDeviceDetector" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -661,7 +661,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B1DD98512740D65B00D36719 /* Build configuration list for PBXProject " USBDeviceDetector" */ = {
+		B1DD98512740D65B00D36719 /* Build configuration list for PBXProject "USBDeviceDetector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B1DD98792740D65D00D36719 /* Debug */,
