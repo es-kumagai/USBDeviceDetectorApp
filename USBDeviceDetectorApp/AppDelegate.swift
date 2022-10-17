@@ -7,6 +7,7 @@
 
 import Cocoa
 import USBDeviceDetector
+import ApplicationStateDetector
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -19,9 +20,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         activityLog("The application did start.")
         
-        mutableAudioDeviceController.deviceMatchingPatterns = configuration.deviceMatchingPatterns
+        mutableAudioDeviceController.deviceMatchingPatterns = configuration.usbDetection.deviceMatchingPatterns
         
-        configuration.deviceMatchingPatterns = mutableAudioDeviceController.deviceMatchingPatterns
+        configuration.usbDetection.deviceMatchingPatterns = mutableAudioDeviceController.deviceMatchingPatterns
 
         usbDeviceDetector.delegate = self
         
@@ -61,13 +62,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
         return true
     }
+    
+    @IBAction func showPreferencesInFinder(_ sender: Any) {
+        
+        guard let libraryPath = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first else {
+            
+            return
+        }
+
+        let bundleIdentifier = Bundle.main.bundleIdentifier!
+        let url = URL(fileURLWithPath: libraryPath)
+            .appendingPathComponent("Preferences")
+            .appendingPathComponent("\(bundleIdentifier).plist")
+        
+        NSWorkspace.shared.activateFileViewerSelecting([url])
+    }
 }
 
 extension AppDelegate {
 
     func isTriggerDeviceExists<Devices: Sequence>(in deviceNames: Devices) -> Bool where Devices.Element == String {
         
-        guard let deviceName = configuration.triggerDeviceName else {
+        guard let deviceName = configuration.usbDetection.triggerDeviceName else {
             
             return false
         }
@@ -125,4 +141,7 @@ extension AppDelegate : USBDeviceDetectorDelegate {
             activityLog("Failed to unmute devices: \(error.localizedDescription)")
         }
     }
+}
+
+extension AppDelegate : ApplicationStateDetectorDelegate {
 }

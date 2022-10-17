@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B141529827E48F2400B99ECC /* Ocean in Frameworks */ = {isa = PBXBuildFile; productRef = B141529727E48F2400B99ECC /* Ocean */; };
-		B141529927E48F3700B99ECC /* Ocean in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B141529727E48F2400B99ECC /* Ocean */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B141529B27E48F4100B99ECC /* USBDeviceDetector in Frameworks */ = {isa = PBXBuildFile; productRef = B141529A27E48F4100B99ECC /* USBDeviceDetector */; };
 		B14152A327E9A92200B99ECC /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14152A227E9A92200B99ECC /* Configuration.swift */; };
 		B163F9042744E85C002E8B99 /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F9032744E85C002E8B99 /* AudioDevice.swift */; };
@@ -20,6 +18,11 @@
 		B163F91227460A93002E8B99 /* AudioHardwareProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F91127460A93002E8B99 /* AudioHardwareProperty.swift */; };
 		B163F91427460B47002E8B99 /* AudioDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F91327460B47002E8B99 /* AudioDeviceProperty.swift */; };
 		B19FAD2E2747155D003979F8 /* MutableAudioDeviceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FAD2D2747155D003979F8 /* MutableAudioDeviceController.swift */; };
+		B1B7252328FDA46600F6EC86 /* USBDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B7252228FDA46600F6EC86 /* USBDetection.swift */; };
+		B1DA051128F037870000AE20 /* ApplicationStateDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = B1DA051028F037870000AE20 /* ApplicationStateDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1DA051428F037870000AE20 /* ApplicationStateDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DA050E28F037870000AE20 /* ApplicationStateDetector.framework */; };
+		B1DA051528F037870000AE20 /* ApplicationStateDetector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1DA050E28F037870000AE20 /* ApplicationStateDetector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1DA051A28F0380E0000AE20 /* ApplicationStateDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DA051928F0380E0000AE20 /* ApplicationStateDetector.swift */; };
 		B1DBC470274E40220068D648 /* ActivityLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC46F274E40220068D648 /* ActivityLogView.swift */; };
 		B1DBC475274E4E6C0068D648 /* ActivityLogNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC474274E4E6C0068D648 /* ActivityLogNotification.swift */; };
 		B1DBC477274E4E9F0068D648 /* ActivityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC476274E4E9F0068D648 /* ActivityLog.swift */; };
@@ -30,7 +33,19 @@
 		B1DD985C2740D65B00D36719 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DD985B2740D65B00D36719 /* ViewController.swift */; };
 		B1DD985E2740D65D00D36719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1DD985D2740D65D00D36719 /* Assets.xcassets */; };
 		B1DD98612740D65D00D36719 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DD985F2740D65D00D36719 /* Main.storyboard */; };
+		B1E9910328F03CB700A604D8 /* Ocean in Frameworks */ = {isa = PBXBuildFile; productRef = B1E9910228F03CB700A604D8 /* Ocean */; };
+		B1E9910528F04FDA00A604D8 /* ApplicationStateDetectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9910428F04FDA00A604D8 /* ApplicationStateDetectorDelegate.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1DA051228F037870000AE20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1DD984E2740D65B00D36719 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1DA050D28F037870000AE20;
+			remoteInfo = ApplicationStateDetector;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		B1BA3F2D2743E1E1007FD967 /* Embed Frameworks */ = {
@@ -39,7 +54,17 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B141529927E48F3700B99ECC /* Ocean in Embed Frameworks */,
+				B1DA051528F037870000AE20 /* ApplicationStateDetector.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1DA051E28F038B80000AE20 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +83,10 @@
 		B163F91127460A93002E8B99 /* AudioHardwareProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHardwareProperty.swift; sourceTree = "<group>"; };
 		B163F91327460B47002E8B99 /* AudioDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeviceProperty.swift; sourceTree = "<group>"; };
 		B19FAD2D2747155D003979F8 /* MutableAudioDeviceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableAudioDeviceController.swift; sourceTree = "<group>"; };
+		B1B7252228FDA46600F6EC86 /* USBDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDetection.swift; sourceTree = "<group>"; };
+		B1DA050E28F037870000AE20 /* ApplicationStateDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationStateDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1DA051028F037870000AE20 /* ApplicationStateDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationStateDetector.h; sourceTree = "<group>"; };
+		B1DA051928F0380E0000AE20 /* ApplicationStateDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStateDetector.swift; sourceTree = "<group>"; };
 		B1DBC46F274E40220068D648 /* ActivityLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogView.swift; sourceTree = "<group>"; };
 		B1DBC474274E4E6C0068D648 /* ActivityLogNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogNotification.swift; sourceTree = "<group>"; };
 		B1DBC476274E4E9F0068D648 /* ActivityLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLog.swift; sourceTree = "<group>"; };
@@ -70,15 +99,24 @@
 		B1DD985D2740D65D00D36719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1DD98602740D65D00D36719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1DD98622740D65D00D36719 /* USBDeviceDetectorApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = USBDeviceDetectorApp.entitlements; sourceTree = "<group>"; };
+		B1E9910428F04FDA00A604D8 /* ApplicationStateDetectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStateDetectorDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B1DA050B28F037870000AE20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1E9910328F03CB700A604D8 /* Ocean in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B1DD98532740D65B00D36719 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B141529827E48F2400B99ECC /* Ocean in Frameworks */,
 				B141529B27E48F4100B99ECC /* USBDeviceDetector in Frameworks */,
+				B1DA051428F037870000AE20 /* ApplicationStateDetector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +134,32 @@
 			path = AudioProperty;
 			sourceTree = "<group>";
 		};
+		B1B7251F28FDA3D800F6EC86 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B1B7252928FDA8A600F6EC86 /* SleepDetection */,
+				B1B7252828FDA55900F6EC86 /* USBDetection */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B1B7252828FDA55900F6EC86 /* USBDetection */ = {
+			isa = PBXGroup;
+			children = (
+				B1B7252228FDA46600F6EC86 /* USBDetection.swift */,
+				B1DBC479274E5E5D0068D648 /* DeviceMatchingPattern.swift */,
+				B1DBC47B274E5E740068D648 /* DeviceMatchingPatternItem.swift */,
+			);
+			path = USBDetection;
+			sourceTree = "<group>";
+		};
+		B1B7252928FDA8A600F6EC86 /* SleepDetection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SleepDetection;
+			sourceTree = "<group>";
+		};
 		B1D8003427E3397400A64922 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,11 +167,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B1DA050F28F037870000AE20 /* ApplicationStateDetector */ = {
+			isa = PBXGroup;
+			children = (
+				B1DA051028F037870000AE20 /* ApplicationStateDetector.h */,
+				B1DA051928F0380E0000AE20 /* ApplicationStateDetector.swift */,
+				B1E9910428F04FDA00A604D8 /* ApplicationStateDetectorDelegate.swift */,
+			);
+			path = ApplicationStateDetector;
+			sourceTree = "<group>";
+		};
 		B1DD984D2740D65B00D36719 = {
 			isa = PBXGroup;
 			children = (
 				B14152BC27EA052900B99ECC /* README.md */,
 				B1DD98582740D65B00D36719 /* USBDeviceDetectorApp */,
+				B1DA050F28F037870000AE20 /* ApplicationStateDetector */,
 				B1DD98572740D65B00D36719 /* Products */,
 				B1D8003427E3397400A64922 /* Frameworks */,
 			);
@@ -117,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				B1DD98562740D65B00D36719 /* USBDeviceDetectorApp.app */,
+				B1DA050E28F037870000AE20 /* ApplicationStateDetector.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +200,7 @@
 		B1DD98582740D65B00D36719 /* USBDeviceDetectorApp */ = {
 			isa = PBXGroup;
 			children = (
+				B1B7251F28FDA3D800F6EC86 /* Settings */,
 				B163F90E27460A5A002E8B99 /* AudioProperty */,
 				B1DD98592740D65B00D36719 /* AppDelegate.swift */,
 				B14152A227E9A92200B99ECC /* Configuration.swift */,
@@ -136,8 +213,6 @@
 				B1DD985F2740D65D00D36719 /* Main.storyboard */,
 				B1DD98622740D65D00D36719 /* USBDeviceDetectorApp.entitlements */,
 				B19FAD2D2747155D003979F8 /* MutableAudioDeviceController.swift */,
-				B1DBC479274E5E5D0068D648 /* DeviceMatchingPattern.swift */,
-				B1DBC47B274E5E740068D648 /* DeviceMatchingPatternItem.swift */,
 				B1DBC476274E4E9F0068D648 /* ActivityLog.swift */,
 				B1DBC46F274E40220068D648 /* ActivityLogView.swift */,
 				B1DBC474274E4E6C0068D648 /* ActivityLogNotification.swift */,
@@ -148,7 +223,40 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		B1DA050928F037870000AE20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1DA051128F037870000AE20 /* ApplicationStateDetector.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		B1DA050D28F037870000AE20 /* ApplicationStateDetector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1DA051828F037870000AE20 /* Build configuration list for PBXNativeTarget "ApplicationStateDetector" */;
+			buildPhases = (
+				B1DA050928F037870000AE20 /* Headers */,
+				B1DA050A28F037870000AE20 /* Sources */,
+				B1DA050B28F037870000AE20 /* Frameworks */,
+				B1DA050C28F037870000AE20 /* Resources */,
+				B1DA051E28F038B80000AE20 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApplicationStateDetector;
+			packageProductDependencies = (
+				B1E9910228F03CB700A604D8 /* Ocean */,
+			);
+			productName = ApplicationStateDetector;
+			productReference = B1DA050E28F037870000AE20 /* ApplicationStateDetector.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		B1DD98552740D65B00D36719 /* USBDeviceDetectorApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1DD987B2740D65D00D36719 /* Build configuration list for PBXNativeTarget "USBDeviceDetectorApp" */;
@@ -161,10 +269,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				B1DA051328F037870000AE20 /* PBXTargetDependency */,
 			);
 			name = USBDeviceDetectorApp;
 			packageProductDependencies = (
-				B141529727E48F2400B99ECC /* Ocean */,
 				B141529A27E48F4100B99ECC /* USBDeviceDetector */,
 			);
 			productName = USBDeviceDetector;
@@ -179,14 +287,18 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					B1DA050D28F037870000AE20 = {
+						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1400;
+					};
 					B1DD98552740D65B00D36719 = {
 						CreatedOnToolsVersion = 13.1;
 					};
 				};
 			};
-			buildConfigurationList = B1DD98512740D65B00D36719 /* Build configuration list for PBXProject "USBDeviceDetector" */;
+			buildConfigurationList = B1DD98512740D65B00D36719 /* Build configuration list for PBXProject " USBDeviceDetector" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -204,11 +316,19 @@
 			projectRoot = "";
 			targets = (
 				B1DD98552740D65B00D36719 /* USBDeviceDetectorApp */,
+				B1DA050D28F037870000AE20 /* ApplicationStateDetector */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B1DA050C28F037870000AE20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B1DD98542740D65B00D36719 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -221,6 +341,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B1DA050A28F037870000AE20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1DA051A28F0380E0000AE20 /* ApplicationStateDetector.swift in Sources */,
+				B1E9910528F04FDA00A604D8 /* ApplicationStateDetectorDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B1DD98522740D65B00D36719 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,6 +368,7 @@
 				B163F91027460A6D002E8B99 /* AudioProperty.swift in Sources */,
 				B14152A327E9A92200B99ECC /* Configuration.swift in Sources */,
 				B163F91427460B47002E8B99 /* AudioDeviceProperty.swift in Sources */,
+				B1B7252328FDA46600F6EC86 /* USBDetection.swift in Sources */,
 				B1DBC47A274E5E5D0068D648 /* DeviceMatchingPattern.swift in Sources */,
 				B163F9042744E85C002E8B99 /* AudioDevice.swift in Sources */,
 				B1DBC475274E4E6C0068D648 /* ActivityLogNotification.swift in Sources */,
@@ -247,6 +377,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1DA051328F037870000AE20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1DA050D28F037870000AE20 /* ApplicationStateDetector */;
+			targetProxy = B1DA051228F037870000AE20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B1DD985F2740D65D00D36719 /* Main.storyboard */ = {
@@ -260,6 +398,78 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B1DA051628F037870000AE20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 89282N6UM7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.ApplicationStateDetector";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B1DA051728F037870000AE20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 89282N6UM7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.ez-net.ApplicationStateDetector";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		B1DD98792740D65D00D36719 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -294,6 +504,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -355,6 +566,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -378,6 +590,7 @@
 		B1DD987C2740D65D00D36719 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = USBDeviceDetectorApp/USBDeviceDetectorApp.entitlements;
@@ -385,6 +598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 89282N6UM7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -407,6 +621,7 @@
 		B1DD987D2740D65D00D36719 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = USBDeviceDetectorApp/USBDeviceDetectorApp.entitlements;
@@ -414,6 +629,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 89282N6UM7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -436,7 +652,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B1DD98512740D65B00D36719 /* Build configuration list for PBXProject "USBDeviceDetector" */ = {
+		B1DA051828F037870000AE20 /* Build configuration list for PBXNativeTarget "ApplicationStateDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1DA051628F037870000AE20 /* Debug */,
+				B1DA051728F037870000AE20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1DD98512740D65B00D36719 /* Build configuration list for PBXProject " USBDeviceDetector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B1DD98792740D65D00D36719 /* Debug */,
@@ -476,15 +701,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B141529727E48F2400B99ECC /* Ocean */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B141529627E48F2400B99ECC /* XCRemoteSwiftPackageReference "Ocean" */;
-			productName = Ocean;
-		};
 		B141529A27E48F4100B99ECC /* USBDeviceDetector */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B141529327E48E9000B99ECC /* XCRemoteSwiftPackageReference "USBDeviceDetector" */;
 			productName = USBDeviceDetector;
+		};
+		B1E9910228F03CB700A604D8 /* Ocean */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B141529627E48F2400B99ECC /* XCRemoteSwiftPackageReference "Ocean" */;
+			productName = Ocean;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

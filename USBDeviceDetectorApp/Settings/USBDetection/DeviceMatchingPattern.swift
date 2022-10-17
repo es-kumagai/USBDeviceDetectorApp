@@ -5,15 +5,18 @@
 //  Created by Tomohiro Kumagai on 2021/11/24.
 //
 
-enum DeviceMatchingPattern {
-
-    case matchAll
-    case notMatchAny
-    case match(Item)
-    case unmatch(Item)
+extension USBDetection {
+    
+    enum DeviceMatchingPattern {
+        
+        case matchAll
+        case notMatchAny
+        case match(Item)
+        case unmatch(Item)
+    }
 }
 
-extension DeviceMatchingPattern : Codable {
+extension USBDetection.DeviceMatchingPattern : Codable {
 
     init(from decoder: Decoder) throws {
         
@@ -60,7 +63,7 @@ extension DeviceMatchingPattern : Codable {
     }
 }
 
-private extension DeviceMatchingPattern {
+private extension USBDetection.DeviceMatchingPattern {
 
     enum CodingKeys : String, CodingKey {
         
@@ -75,7 +78,7 @@ private extension DeviceMatchingPattern {
         case match = "Match"
         case unmatch = "Unmatch"
         
-        init(from item: DeviceMatchingPattern) {
+        init(from item: USBDetection.DeviceMatchingPattern) {
             
             switch item {
                 
@@ -95,7 +98,7 @@ private extension DeviceMatchingPattern {
     }
 }
 
-extension DeviceMatchingPattern : CustomStringConvertible {
+extension USBDetection.DeviceMatchingPattern : CustomStringConvertible {
 
     var description: String {
         
@@ -116,7 +119,7 @@ extension DeviceMatchingPattern : CustomStringConvertible {
     }
 }
 
-extension Sequence where Element == DeviceMatchingPattern {
+extension Sequence where Element == USBDetection.DeviceMatchingPattern {
     
     func matching(to device: AudioDevice) -> Bool {
         

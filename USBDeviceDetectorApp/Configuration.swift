@@ -10,15 +10,11 @@ import USBDeviceDetector
 
 struct Configuration {
     
-    typealias DeviceMatchingPatterns = Array<DeviceMatchingPattern>
-    
-    var triggerDeviceName: String?
-    var deviceMatchingPatterns: DeviceMatchingPatterns
+    var usbDetection: USBDetection
     
     init() throws {
         
-        triggerDeviceName = Self.triggerDeviceNameInUserDefaults
-        deviceMatchingPatterns = Self.deviceMatchingPatternsInUserDefaults
+        usbDetection = Self.usbDetectionInUserDefaults
     }
 }
 
@@ -34,35 +30,20 @@ extension Configuration {
 extension Configuration {
     
     static let userDefaults = UserDefaults.standard
-    static let triggerDeviceNameKey = "Trigger Device Name"
-    static let deviceMatchingPatternsKey = "Device Matching Patterns"
-
-    static var triggerDeviceNameInUserDefaults: String? {
+        
+    static var usbDetectionInUserDefaults: USBDetection {
         
         get {
             
-            userDefaults.string(forKey: triggerDeviceNameKey)
-        }
-        
-        set (deviceName) {
-            
-            userDefaults.set(deviceName, forKey: triggerDeviceNameKey)
-        }
-    }
-    
-    static var deviceMatchingPatternsInUserDefaults: DeviceMatchingPatterns {
-        
-        get {
-            
-            guard let dictionary = userDefaults.object(forKey: deviceMatchingPatternsKey) else {
+            guard let dictionary = userDefaults.object(forKey: USBDetection.configurationKey) else {
                 
-                return []
+                return USBDetection(triggerDeviceName: nil, deviceMatchingPatterns: [])
             }
 
             let decoder = PropertyListDecoder()
             let data = try! PropertyListSerialization.data(fromPropertyList: dictionary, format: .xml, options: 0)
             
-            return try! decoder.decode(DeviceMatchingPatterns.self, from:
+            return try! decoder.decode(USBDetection.self, from:
 data)
         }
         
@@ -73,13 +54,12 @@ data)
             let data = try! encoder.encode(patterns)
             let dictionary = try! PropertyListSerialization.propertyList(from: data, format: nil)
 
-            userDefaults.set(dictionary, forKey: deviceMatchingPatternsKey)
+            userDefaults.set(dictionary, forKey: USBDetection.configurationKey)
         }
     }
     
     func save() throws {
         
-        Self.triggerDeviceNameInUserDefaults = triggerDeviceName
-        Self.deviceMatchingPatternsInUserDefaults = deviceMatchingPatterns
-    }    
+        Self.usbDetectionInUserDefaults = usbDetection
+    }
 }

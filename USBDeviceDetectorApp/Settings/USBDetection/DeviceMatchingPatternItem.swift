@@ -5,7 +5,7 @@
 //  Created by Tomohiro Kumagai on 2021/11/24.
 //
 
-extension DeviceMatchingPattern {
+extension USBDetection.DeviceMatchingPattern {
     
     enum Item {
         
@@ -15,7 +15,7 @@ extension DeviceMatchingPattern {
     }
 }
 
-extension DeviceMatchingPattern.Item : Codable {
+extension USBDetection.DeviceMatchingPattern.Item : Codable {
 
     init(from decoder: Decoder) throws {
         
@@ -54,7 +54,7 @@ extension DeviceMatchingPattern.Item : Codable {
     }
 }
 
-private extension DeviceMatchingPattern.Item {
+private extension USBDetection.DeviceMatchingPattern.Item {
 
     enum ItemKey : String, Codable {
     
@@ -62,7 +62,7 @@ private extension DeviceMatchingPattern.Item {
         case namePrefix = "Name Prefix"
         case name = "Name"
         
-        init(from item: DeviceMatchingPattern.Item) {
+        init(from item: USBDetection.DeviceMatchingPattern.Item) {
             
             switch item {
                 
@@ -85,7 +85,7 @@ private extension DeviceMatchingPattern.Item {
     }
 }
 
-extension DeviceMatchingPattern {
+extension USBDetection.DeviceMatchingPattern {
     
     func matching(to device: AudioDevice) -> Bool {
         
@@ -118,7 +118,7 @@ extension DeviceMatchingPattern {
     }
 }
 
-extension DeviceMatchingPattern.Item : CustomStringConvertible {
+extension USBDetection.DeviceMatchingPattern.Item : CustomStringConvertible {
     
     var description: String {
         

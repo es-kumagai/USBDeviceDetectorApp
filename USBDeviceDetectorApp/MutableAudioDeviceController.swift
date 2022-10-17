@@ -11,25 +11,24 @@ final class MutableAudioDeviceController {
     
     typealias AudioDeviceIDs = Array<AudioDevice.ObjectID>
     typealias AudioDevices = Array<AudioDevice>
-    typealias DeviceMatchingPatterns = Array<DeviceMatchingPattern>
 
     static var audioObjectController = AudioObjectController.self
     
     var targetDeviceIDs: AudioDeviceIDs
-    var deviceMatchingPatterns: DeviceMatchingPatterns
+    var deviceMatchingPatterns: USBDetection.DeviceMatchingPatterns
     
-    init(targetDeviceIDs: AudioDeviceIDs, deviceMatchingPatterns: DeviceMatchingPatterns = []) {
+    init(targetDeviceIDs: AudioDeviceIDs, deviceMatchingPatterns: USBDetection.DeviceMatchingPatterns = []) {
         
         self.targetDeviceIDs = targetDeviceIDs
         self.deviceMatchingPatterns = deviceMatchingPatterns
     }
     
-    convenience init(deviceMatchingPatterns: DeviceMatchingPatterns = []) throws {
+    convenience init(deviceMatchingPatterns: USBDetection.DeviceMatchingPatterns = []) throws {
     
         try self.init(targetDeviceIDs: Self.currentMutableDevices.map(\.objectID), deviceMatchingPatterns: deviceMatchingPatterns)
     }
     
-    convenience init(targetDevicesByName names: Array<String>, deviceMatchingPatterns: DeviceMatchingPatterns = []) throws {
+    convenience init(targetDevicesByName names: Array<String>, deviceMatchingPatterns: USBDetection.DeviceMatchingPatterns = []) throws {
 
         let targetDevices = try Self.audioObjectController.devices
             .filter(\.canMute)
