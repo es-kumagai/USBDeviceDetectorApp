@@ -90,5 +90,6 @@ data)
     func save() throws {
         
         Self.usbDetectionInUserDefaults = usbDetection
+        Self.appStateDetectionInUserDefaults = appStateDetection
     }
 }
