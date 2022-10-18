@@ -10,24 +10,29 @@ import USBDeviceDetector
 import ApplicationStateDetector
 
 @main
+@objcMembers
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var configuration = try! Configuration()
     var mutableAudioDeviceController = try! MutableAudioDeviceController()
-    var usbDeviceDetector = USBDeviceDetector()
+    var usbDeviceDetector = USBDeviceDetector(notificationCenter: NSWorkspace.shared.notificationCenter)
+    var applicationStateDetector = ApplicationStateDetector()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
-        activityLog("The application did start.")
-        
         mutableAudioDeviceController.deviceMatchingPatterns = configuration.usbDetection.deviceMatchingPatterns
         
         configuration.usbDetection.deviceMatchingPatterns = mutableAudioDeviceController.deviceMatchingPatterns
 
         usbDeviceDetector.delegate = self
+        applicationStateDetector.delegate = self
         
         activityLog(label: "Matching patterns") {
-            mutableAudioDeviceController.deviceMatchingPatterns
+            configuration.usbDetection.deviceMatchingPatterns
+        }
+            
+        activityLog(label: "Terminations") {
+            configuration.appStateDetection.terminations
         }
             
         do {
@@ -57,6 +62,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
 
         usbDeviceDetector.delegate = nil
+        applicationStateDetector.delegate = nil
     }
 
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
@@ -144,4 +150,63 @@ extension AppDelegate : USBDeviceDetectorDelegate {
 }
 
 extension AppDelegate : ApplicationStateDetectorDelegate {
+
+    func applicationStateDetectorWillPowerOff(_ detector: ApplicationStateDetector) {
+        
+        activityLog("The application will power off.")
+    }
+    
+    func applicationStateDetectorWillSleep(_ detector: ApplicationStateDetector) {
+        
+        activityLog("The application will sleep.")
+        
+        for termination in configuration.appStateDetection.terminations {
+            
+            let runningApplications = NSRunningApplications(withBundleIdentifier: termination.bundleIdentifier)
+            
+            guard let applicationName = runningApplications.first?.localizedName else {
+                
+                return
+            }
+            
+//            do {
+
+                switch termination.force {
+                    
+                case true:
+                    activityLog("Invoke force termination to \(applicationName)")
+//                    try runningApplications.forceTerminateWithWaitingUntilDone()
+                    runningApplications.forceTerminate()
+                    
+                case false:
+                    activityLog("Invoke normal termination to \(applicationName)")
+//                    try runningApplications.terminateWithWaitingUntilDone()
+                    runningApplications.terminate()
+                }
+//            }
+//            catch let error as CancellationError {
+//
+//                activityLog("Termination process was cancelled: \(error.localizedDescription)")
+//            }
+//            catch {
+//
+//                fatalError(error.localizedDescription)
+//            }
+        }
+    }
+    
+    func applicationStateDetectorDidWake(_ detector: ApplicationStateDetector) {
+        
+        activityLog("The application did wake.")
+    }
+    
+    func applicationStateDetectorScreenDidSleep(_ detector: ApplicationStateDetector) {
+        
+        activityLog("The screen did sleep.")
+    }
+
+    func applicationStateDetectorScreenDidWake(_ detector: ApplicationStateDetector) {
+        
+        activityLog("The screen did wake.")
+    }
 }

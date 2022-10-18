@@ -5,11 +5,13 @@
 //  Created by Tomohiro Kumagai on 2021/11/24.
 //
 
+import AppKit
+
 func activityLog(_ message: String) {
 
     let log = ActivityLog(message: message)
     
-    ActivityLogNotification(log: log).post()
+    ActivityLogNotification(log: log).post(to: NSWorkspace.shared.notificationCenter)
 }
 
 func activityLog(label: String, @ActivityLogOptionDescriptions options: () -> String) {

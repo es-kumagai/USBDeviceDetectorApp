@@ -6,7 +6,7 @@
       "location" : "https://github.com/es-kumagai/Ocean.git",
       "state" : {
         "branch" : "master",
-        "revision" : "eb262a5a417e7e39e60d232fd57538f7b708d43e"
+        "revision" : "89e7a9ad26f54de238c78263c67d23297966f967"
       }
     },
     {
@@ -24,7 +24,7 @@
       "location" : "https://github.com/es-kumagai/USBDeviceDetector.git",
       "state" : {
         "branch" : "main",
-        "revision" : "b542610201ed36d874c41347eb91a58c65c36247"
+        "revision" : "7bd8547a028615dfeb692e148cddfaa5c4789814"
       }
     }
   ],

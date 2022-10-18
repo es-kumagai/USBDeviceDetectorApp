@@ -17,12 +17,16 @@
 		B163F91027460A6D002E8B99 /* AudioProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F90F27460A6D002E8B99 /* AudioProperty.swift */; };
 		B163F91227460A93002E8B99 /* AudioHardwareProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F91127460A93002E8B99 /* AudioHardwareProperty.swift */; };
 		B163F91427460B47002E8B99 /* AudioDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163F91327460B47002E8B99 /* AudioDeviceProperty.swift */; };
+		B194777228FDCEEA00BD4D29 /* AppStateDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194777128FDCEEA00BD4D29 /* AppStateDetection.swift */; };
+		B194777428FDCF3200BD4D29 /* Termination.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194777328FDCF3200BD4D29 /* Termination.swift */; };
+		B194777628FDD48200BD4D29 /* NSRunningApplications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194777528FDD48200BD4D29 /* NSRunningApplications.swift */; };
+		B194777928FDE11D00BD4D29 /* ApplicationStateDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DA051928F0380E0000AE20 /* ApplicationStateDetector.swift */; };
+		B194777A28FDE12500BD4D29 /* ApplicationStateDetectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9910428F04FDA00A604D8 /* ApplicationStateDetectorDelegate.swift */; };
 		B19FAD2E2747155D003979F8 /* MutableAudioDeviceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19FAD2D2747155D003979F8 /* MutableAudioDeviceController.swift */; };
 		B1B7252328FDA46600F6EC86 /* USBDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B7252228FDA46600F6EC86 /* USBDetection.swift */; };
 		B1DA051128F037870000AE20 /* ApplicationStateDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = B1DA051028F037870000AE20 /* ApplicationStateDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1DA051428F037870000AE20 /* ApplicationStateDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1DA050E28F037870000AE20 /* ApplicationStateDetector.framework */; };
 		B1DA051528F037870000AE20 /* ApplicationStateDetector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1DA050E28F037870000AE20 /* ApplicationStateDetector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B1DA051A28F0380E0000AE20 /* ApplicationStateDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DA051928F0380E0000AE20 /* ApplicationStateDetector.swift */; };
 		B1DBC470274E40220068D648 /* ActivityLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC46F274E40220068D648 /* ActivityLogView.swift */; };
 		B1DBC475274E4E6C0068D648 /* ActivityLogNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC474274E4E6C0068D648 /* ActivityLogNotification.swift */; };
 		B1DBC477274E4E9F0068D648 /* ActivityLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DBC476274E4E9F0068D648 /* ActivityLog.swift */; };
@@ -34,7 +38,6 @@
 		B1DD985E2740D65D00D36719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1DD985D2740D65D00D36719 /* Assets.xcassets */; };
 		B1DD98612740D65D00D36719 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1DD985F2740D65D00D36719 /* Main.storyboard */; };
 		B1E9910328F03CB700A604D8 /* Ocean in Frameworks */ = {isa = PBXBuildFile; productRef = B1E9910228F03CB700A604D8 /* Ocean */; };
-		B1E9910528F04FDA00A604D8 /* ApplicationStateDetectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9910428F04FDA00A604D8 /* ApplicationStateDetectorDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,9 @@
 		B163F90F27460A6D002E8B99 /* AudioProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioProperty.swift; sourceTree = "<group>"; };
 		B163F91127460A93002E8B99 /* AudioHardwareProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHardwareProperty.swift; sourceTree = "<group>"; };
 		B163F91327460B47002E8B99 /* AudioDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeviceProperty.swift; sourceTree = "<group>"; };
+		B194777128FDCEEA00BD4D29 /* AppStateDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateDetection.swift; sourceTree = "<group>"; };
+		B194777328FDCF3200BD4D29 /* Termination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Termination.swift; sourceTree = "<group>"; };
+		B194777528FDD48200BD4D29 /* NSRunningApplications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRunningApplications.swift; sourceTree = "<group>"; };
 		B19FAD2D2747155D003979F8 /* MutableAudioDeviceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableAudioDeviceController.swift; sourceTree = "<group>"; };
 		B1B7252228FDA46600F6EC86 /* USBDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDetection.swift; sourceTree = "<group>"; };
 		B1DA050E28F037870000AE20 /* ApplicationStateDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationStateDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +143,7 @@
 		B1B7251F28FDA3D800F6EC86 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				B1B7252928FDA8A600F6EC86 /* SleepDetection */,
+				B1B7252928FDA8A600F6EC86 /* AppStateDetection */,
 				B1B7252828FDA55900F6EC86 /* USBDetection */,
 			);
 			path = Settings;
@@ -153,11 +159,13 @@
 			path = USBDetection;
 			sourceTree = "<group>";
 		};
-		B1B7252928FDA8A600F6EC86 /* SleepDetection */ = {
+		B1B7252928FDA8A600F6EC86 /* AppStateDetection */ = {
 			isa = PBXGroup;
 			children = (
+				B194777128FDCEEA00BD4D29 /* AppStateDetection.swift */,
+				B194777328FDCF3200BD4D29 /* Termination.swift */,
 			);
-			path = SleepDetection;
+			path = AppStateDetection;
 			sourceTree = "<group>";
 		};
 		B1D8003427E3397400A64922 /* Frameworks */ = {
@@ -209,6 +217,7 @@
 				B163F90A2745445E002E8B99 /* AudioObjectController.swift */,
 				B163F90C2745491D002E8B99 /* AudioObjectPropertyValue.swift */,
 				B163F9052744E9D2002E8B99 /* AudioDeviceError.swift */,
+				B194777528FDD48200BD4D29 /* NSRunningApplications.swift */,
 				B1DD985D2740D65D00D36719 /* Assets.xcassets */,
 				B1DD985F2740D65D00D36719 /* Main.storyboard */,
 				B1DD98622740D65D00D36719 /* USBDeviceDetectorApp.entitlements */,
@@ -345,8 +354,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1DA051A28F0380E0000AE20 /* ApplicationStateDetector.swift in Sources */,
-				B1E9910528F04FDA00A604D8 /* ApplicationStateDetectorDelegate.swift in Sources */,
+				B194777928FDE11D00BD4D29 /* ApplicationStateDetector.swift in Sources */,
+				B194777A28FDE12500BD4D29 /* ApplicationStateDetectorDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B163F91227460A93002E8B99 /* AudioHardwareProperty.swift in Sources */,
+				B194777628FDD48200BD4D29 /* NSRunningApplications.swift in Sources */,
 				B1DBC470274E40220068D648 /* ActivityLogView.swift in Sources */,
 				B1DBC47C274E5E740068D648 /* DeviceMatchingPatternItem.swift in Sources */,
 				B1DD985C2740D65B00D36719 /* ViewController.swift in Sources */,
@@ -371,8 +381,10 @@
 				B1B7252328FDA46600F6EC86 /* USBDetection.swift in Sources */,
 				B1DBC47A274E5E5D0068D648 /* DeviceMatchingPattern.swift in Sources */,
 				B163F9042744E85C002E8B99 /* AudioDevice.swift in Sources */,
+				B194777428FDCF3200BD4D29 /* Termination.swift in Sources */,
 				B1DBC475274E4E6C0068D648 /* ActivityLogNotification.swift in Sources */,
 				B163F90D2745491D002E8B99 /* AudioObjectPropertyValue.swift in Sources */,
+				B194777228FDCEEA00BD4D29 /* AppStateDetection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,7 +609,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 89282N6UM7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -628,7 +640,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 89282N6UM7;
 				ENABLE_HARDENED_RUNTIME = YES;

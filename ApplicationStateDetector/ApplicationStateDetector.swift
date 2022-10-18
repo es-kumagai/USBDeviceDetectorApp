@@ -15,18 +15,15 @@ open class ApplicationStateDetector : NSObject, NotificationObservable {
     public weak var delegate: ApplicationStateDetectorDelegate?
     public private(set) var notificationHandlers = Notification.Handlers()
 
-    internal static var notificationCenter = NotificationCenter.default
-    
-    public override init() {
+    public init(notificationCenter: NotificationCenter = NSWorkspace.shared.notificationCenter) {
 
         super.init()
 
-        observe(notificationNamed: NSApplication.didFinishLaunchingNotification, using: applicationDidLaunch(_:))
-        observe(notificationNamed: NSWorkspace.willPowerOffNotification, using: deviceWillPowerOff(_:))
-        observe(notificationNamed: NSWorkspace.willSleepNotification, using: deviceWillSleep(_:))
-        observe(notificationNamed: NSWorkspace.didWakeNotification, using: deviceDidWake(_:))
-        observe(notificationNamed: NSWorkspace.screensDidSleepNotification, using: screenDidSleep(_:))
-        observe(notificationNamed: NSWorkspace.screensDidWakeNotification, using: screenDidWake(_:))
+        observe(notificationNamed: NSWorkspace.willPowerOffNotification, on: notificationCenter, using: deviceWillPowerOff(_:))
+        observe(notificationNamed: NSWorkspace.willSleepNotification, on: notificationCenter, using: deviceWillSleep(_:))
+        observe(notificationNamed: NSWorkspace.didWakeNotification, on: notificationCenter, using: deviceDidWake(_:))
+        observe(notificationNamed: NSWorkspace.screensDidSleepNotification, on: notificationCenter, using: screenDidSleep(_:))
+        observe(notificationNamed: NSWorkspace.screensDidWakeNotification, on: notificationCenter, using: screenDidWake(_:))
     }
     
     deinit {
@@ -37,11 +34,6 @@ open class ApplicationStateDetector : NSObject, NotificationObservable {
 
 extension ApplicationStateDetector {
 
-    open func applicationDidLaunch(_ notification: Notification) {
-        
-        delegate?.applicationStateDetectorApplicationDidLaunch?(self)
-    }
-    
     open func deviceWillPowerOff(_ notification: Notification) {
         
         delegate?.applicationStateDetectorWillPowerOff?(self)

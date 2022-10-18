@@ -12,6 +12,7 @@ class ViewController: NSViewController, NotificationObservable {
     
     @IBOutlet private(set) var activityLogView: ActivityLogView!
     
+    var notificationCenter = NSWorkspace.shared.notificationCenter
     var notificationHandlers = Notification.Handlers()
 
     deinit {

@@ -11,10 +11,12 @@ import USBDeviceDetector
 struct Configuration {
     
     var usbDetection: USBDetection
+    var appStateDetection: AppStateDetection
     
     init() throws {
         
         usbDetection = Self.usbDetectionInUserDefaults
+        appStateDetection = Self.appStateDetectionInUserDefaults
     }
 }
 
@@ -55,6 +57,33 @@ data)
             let dictionary = try! PropertyListSerialization.propertyList(from: data, format: nil)
 
             userDefaults.set(dictionary, forKey: USBDetection.configurationKey)
+        }
+    }
+    
+    static var appStateDetectionInUserDefaults: AppStateDetection {
+        
+        get {
+            
+            guard let dictionary = userDefaults.object(forKey: AppStateDetection.configurationKey) else {
+                
+                return AppStateDetection(terminations: [])
+            }
+
+            let decoder = PropertyListDecoder()
+            let data = try! PropertyListSerialization.data(fromPropertyList: dictionary, format: .xml, options: 0)
+            
+            return try! decoder.decode(AppStateDetection.self, from:
+data)
+        }
+        
+        set (patterns) {
+            
+            let encoder = PropertyListEncoder()
+            
+            let data = try! encoder.encode(patterns)
+            let dictionary = try! PropertyListSerialization.propertyList(from: data, format: nil)
+
+            userDefaults.set(dictionary, forKey: AppStateDetection.configurationKey)
         }
     }
     
