@@ -17,6 +17,8 @@ final class MutableAudioDeviceController {
     var targetDeviceIDs: AudioDeviceIDs
     var deviceMatchingPatterns: USBDetection.DeviceMatchingPatterns
     
+    private(set) var currentMuteState: Bool = true
+    
     init(targetDeviceIDs: AudioDeviceIDs, deviceMatchingPatterns: USBDetection.DeviceMatchingPatterns = []) {
         
         self.targetDeviceIDs = targetDeviceIDs
@@ -25,16 +27,26 @@ final class MutableAudioDeviceController {
     
     convenience init(deviceMatchingPatterns: USBDetection.DeviceMatchingPatterns = []) throws {
     
-        try self.init(targetDeviceIDs: Self.currentMutableDevices.map(\.objectID), deviceMatchingPatterns: deviceMatchingPatterns)
+        try self.init(targetDeviceIDs: Self.currentMutableDeviceIDs, deviceMatchingPatterns: deviceMatchingPatterns)
     }
     
-    convenience init(targetDevicesByName names: Array<String>, deviceMatchingPatterns: USBDetection.DeviceMatchingPatterns = []) throws {
+    convenience init(targetDevicesByNames names: Array<String>, deviceMatchingPatterns: USBDetection.DeviceMatchingPatterns = []) throws {
 
-        let targetDevices = try Self.audioObjectController.devices
-            .filter(\.canMute)
-            .filter { names.contains($0.name) }
+        let targetDevices = try Self.devices(byNames: names)
 
         self.init(targetDeviceIDs: targetDevices.map(\.objectID), deviceMatchingPatterns: deviceMatchingPatterns)
+    }
+    
+    static func devices(byNames names: Array<String>) throws -> AudioDevices {
+        
+        try audioObjectController.devices
+            .filter(\.canMute)
+            .filter { names.contains($0.name) }
+    }
+    
+    static func deviceIDs(byNames names: Array<String>) throws -> AudioDeviceIDs {
+        
+        try devices(byNames: names).map(\.objectID)
     }
     
     static var currentMutableDevices: AudioDevices {
@@ -42,6 +54,14 @@ final class MutableAudioDeviceController {
         get throws {
 
             try audioObjectController.devices.filter(\.canMute)
+        }
+    }
+    
+    static var currentMutableDeviceIDs: AudioDeviceIDs {
+        
+        get throws {
+            
+            try currentMutableDevices.map(\.objectID)
         }
     }
 
@@ -54,8 +74,37 @@ final class MutableAudioDeviceController {
                 .filter { targetDeviceIDs.contains($0.objectID) }
         }
     }
+        
+    func updateTargetDeviceIDsByCurrentMutableDevices() throws {
+        
+        targetDeviceIDs = try Self.currentMutableDeviceIDs
+    }
+    
+    func updateTargetDeviceIDsByNames(_ names: Array<String>) throws {
+        
+        targetDeviceIDs = try Self.deviceIDs(byNames: names)
+    }
+    
+    func updateMuteState() throws {
+    
+        try updateMuteState(currentMuteState)
+    }
+    
+    func updateMuteState(_ mute: Bool) throws {
+        
+        switch mute {
+            
+        case true:
+            try muteAll()
+            
+        case false:
+            try unmuteAll()
+        }
+    }
     
     func muteAll() throws {
+        
+        currentMuteState = true
         
         for device in try currentTargetDevices {
             
@@ -66,6 +115,8 @@ final class MutableAudioDeviceController {
     
     func unmuteAll() throws {
         
+        currentMuteState = false
+
         for device in try currentTargetDevices {
             
             device.muted = false

@@ -25,7 +25,10 @@ class ViewController: NSViewController, NotificationObservable {
 
         observe(ActivityLogNotification.self) { [unowned self] notification in
             
-            activityLogView.appendLog(notification.log)
+            Task { @MainActor in
+                
+                activityLogView.appendLog(notification.log)
+            }
         }
     }
 

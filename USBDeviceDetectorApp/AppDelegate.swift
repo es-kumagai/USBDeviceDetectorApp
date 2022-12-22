@@ -116,16 +116,24 @@ extension AppDelegate : USBDeviceDetectorDelegate {
             devices.map(\.name)
         }
         
-        do {
+        let isTriggerDeviceExists = isTriggerDeviceExists(in: devices)
+
+        Task {
             
-            if isTriggerDeviceExists(in: devices) {
+            do {
                 
-                try mutableAudioDeviceController.unmuteAll()
+                try mutableAudioDeviceController.updateTargetDeviceIDsByCurrentMutableDevices()
+                
+                if isTriggerDeviceExists {
+                    try mutableAudioDeviceController.unmuteAll()
+                } else {
+                    try mutableAudioDeviceController.updateMuteState()
+                }
             }
-        }
-        catch {
-            
-            print("Failed to mute devices: \(error.localizedDescription)")
+            catch {
+                
+                print("Failed to mute devices: \(error.localizedDescription)")
+            }
         }
     }
     
@@ -135,16 +143,24 @@ extension AppDelegate : USBDeviceDetectorDelegate {
             devices.map(\.name)
         }
 
-        do {
-
-            if isTriggerDeviceExists(in: devices) {
-                
-                try mutableAudioDeviceController.muteAll()
-            }
-        }
-        catch {
+        let isTriggerDeviceExists = isTriggerDeviceExists(in: devices)
+        
+        Task {
             
-            activityLog("Failed to unmute devices: \(error.localizedDescription)")
+            do {
+                
+                try mutableAudioDeviceController.updateTargetDeviceIDsByCurrentMutableDevices()
+                
+                if isTriggerDeviceExists {
+                    try mutableAudioDeviceController.muteAll()
+                } else {
+                    try mutableAudioDeviceController.updateMuteState()
+                }
+            }
+            catch {
+                
+                activityLog("Failed to unmute devices: \(error.localizedDescription)")
+            }
         }
     }
 }

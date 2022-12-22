@@ -7,6 +7,7 @@
 
 import Cocoa
 
+@MainActor
 class ActivityLogView: NSTextView {
 
     func appendLog(_ log: ActivityLog) {
@@ -17,9 +18,10 @@ class ActivityLogView: NSTextView {
         }
         
         string.append(log.message)
-        
-        Task {
 
+        Task {
+            
+            try? await Task.sleep(nanoseconds: 100_000_000)
             scrollToEnd()
         }
     }
